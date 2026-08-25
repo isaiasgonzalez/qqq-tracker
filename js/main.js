@@ -1,8 +1,9 @@
 import { DATA_URL } from './config.js';
 import { normalizeFeed } from './normalize.js';
-import { state } from './state.js';
+import { state, getQqqTotal, getMonthlyTotal, getYearlyTotal } from './state.js';
 import { renderLoading, renderError } from './ui/loading-error.js';
 import { renderStats } from './ui/stats.js';
+import { renderIndexPerformance } from './ui/index-performance.js';
 import { sortAndRenderTable } from './ui/table.js';
 import { initCapture } from './capture.js';
 
@@ -14,12 +15,13 @@ import { initCapture } from './capture.js';
 
 const container = document.getElementById('state-container');
 const statsStrip = document.getElementById('stats-strip');
+const indexPerformanceEl = document.getElementById('index-performance');
 const footerLegend = document.getElementById('footer-legend');
 const captureBtn = document.getElementById('btn-captura');
 const captureBtnLabel = document.getElementById('btn-captura-label');
 
 // Requisito 6: leyenda fija en el pie de página.
-footerLegend.textContent = 'Datos diferidos 30 min - Solo con fines educativos - x.com/isaias3g';
+footerLegend.textContent = 'Datos diferidos 15 min - Solo con fines educativos';
 
 initCapture(captureBtn, captureBtnLabel);
 
@@ -27,6 +29,7 @@ init();
 
 async function init() {
   renderLoading(container, statsStrip);
+  indexPerformanceEl.classList.add('hidden');
   captureBtn.disabled = true;
   try {
     const res = await fetch(DATA_URL, { cache: 'no-store' });
@@ -36,9 +39,15 @@ async function init() {
     state.rawData = normalized.items;
     state.rootData = normalized.root;
     renderStats(statsStrip, state.rawData);
+    renderIndexPerformance(indexPerformanceEl, {
+      daily: getQqqTotal(),
+      monthly: getMonthlyTotal(),
+      yearly: getYearlyTotal(),
+    });
     sortAndRenderTable(container);
     captureBtn.disabled = false;
   } catch (err) {
     renderError(container, statsStrip, err);
+    indexPerformanceEl.classList.add('hidden');
   }
 }

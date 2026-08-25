@@ -19,3 +19,25 @@ export function getQqqTotal() {
   }
   return state.rawData.reduce(function (sum, d) { return sum + Number(d.impacto_qqq || 0); }, 0);
 }
+
+// Variación del índice en horizontes más largos (mes, año). A diferencia del
+// diario, acá no hay forma de estimarla sumando impactos de constituyentes,
+// así que si el JSON no trae el campo, devuelve null (y la UI muestra "—").
+// Acepta varios nombres de campo posibles en la raíz del JSON, mismo criterio
+// que normalize.js usa para los constituyentes.
+export function getMonthlyTotal() {
+  return readPeriodField(['variacion_mensual_qqq', 'variacion_1m_qqq', 'variacion_mes_qqq']);
+}
+
+export function getYearlyTotal() {
+  return readPeriodField(['variacion_anual_qqq', 'variacion_1y_qqq', 'variacion_anio_qqq']);
+}
+
+function readPeriodField(candidateKeys) {
+  if (!state.rootData) return null;
+  for (const key of candidateKeys) {
+    const v = state.rootData[key];
+    if (v !== undefined && v !== null) return Number(v);
+  }
+  return null;
+}

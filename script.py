@@ -8,7 +8,7 @@ import logging
 import sys
 import time
 from collections import Counter
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
@@ -37,6 +37,14 @@ TIMEOUT_RED = 15  # segundos
 MAX_REINTENTOS = 3
 ESPERA_ENTRE_REINTENTOS = 2  # segundos
 PERIODO_DESCARGA_PRECIOS = "5d"  # margen para saltar fines de semana/feriados
+
+# Historial largo, SOLO para el ticker del índice (QQQ), usado para calcular
+# variación mensual y anual reales. "2y" da margen de sobra para encontrar
+# una sesión de referencia a ~30 y ~365 días de calendario hacia atrás,
+# incluso salteando fines de semana/feriados.
+PERIODO_DESCARGA_PRECIOS_LARGO = "2y"
+DIAS_MES = 30
+DIAS_ANIO = 365
 
 logging.basicConfig(
     level=logging.INFO,
@@ -315,6 +323,73 @@ def _procesar_componente(ticker: str, historial: pd.DataFrame, fecha_mercado: da
     }
 
 
+def _descargar_historico_largo(ticker: str) -> Optional[pd.Series]:
+    """
+    Descarga histórico largo (PERIODO_DESCARGA_PRECIOS_LARGO) de un solo
+    ticker, para calcular variaciones mensual/anual. Es una llamada aparte
+    de la batch de precios diarios porque acá interesa un rango temporal
+    mucho más largo, y solo para el índice (no para los 102 componentes).
+    Devuelve None ante cualquier fallo, en vez de interrumpir todo el
+    pipeline: variación mensual/anual son "nice to have", no el dato
+    principal.
+    """
+    try:
+        datos = yf.download(
+            tickers=ticker,
+            period=PERIODO_DESCARGA_PRECIOS_LARGO,
+            interval="1d",
+            auto_adjust=False,
+            threads=True,
+            progress=False,
+            timeout=TIMEOUT_RED,
+        )
+        if datos is None or datos.empty or "Close" not in datos.columns:
+            log.warning("Histórico largo de %s vino vacío o sin columna Close.", ticker)
+            return None
+        cierres = datos["Close"]
+        # yfinance a veces devuelve columnas con MultiIndex (Close, TICKER)
+        # incluso para un solo ticker, con lo cual esto sería un DataFrame
+        # de una columna en vez de una Serie. Lo aplanamos a Serie.
+        if isinstance(cierres, pd.DataFrame):
+            cierres = cierres.iloc[:, 0]
+        cierres = cierres.dropna()
+        # yfinance a veces devuelve fechas duplicadas en el índice; nos
+        # quedamos con la última ocurrencia para que cada fecha sea única
+        # y evitar que .loc devuelva una Serie en vez de un escalar.
+        if cierres.index.duplicated().any():
+            log.warning("Histórico largo de %s tenía fechas duplicadas; se deduplicaron.", ticker)
+            cierres = cierres[~cierres.index.duplicated(keep="last")]
+        return cierres
+    except Exception as e:  # noqa: BLE001 - no crítico, ver docstring
+        log.warning("No se pudo descargar histórico largo de %s: %s", ticker, e)
+        return None
+
+
+def _variacion_desde_dias_atras(cierres: pd.Series, fecha_referencia: date, dias_atras: int) -> Optional[float]:
+    """
+    Variación % entre el último cierre disponible y el cierre más cercano
+    (hacia atrás) a `fecha_referencia - dias_atras` días de calendario.
+    Se usa días de calendario (no ruedas de mercado) porque es como la
+    gente piensa "hace un mes" / "hace un año", y como se calcula en
+    Yahoo Finance.
+    """
+    if cierres is None or cierres.empty:
+        return None
+    fecha_objetivo = fecha_referencia - timedelta(days=dias_atras)
+    fechas_previas = cierres.index[cierres.index.date <= fecha_objetivo]
+    if fechas_previas.empty:
+        return None  # no hay suficiente historial para ese horizonte todavía
+    valor_referencia = cierres.loc[fechas_previas[-1]]
+    if isinstance(valor_referencia, pd.Series):
+        # Índice con fechas duplicadas: nos quedamos con el último valor
+        valor_referencia = valor_referencia.iloc[-1]
+    precio_referencia = float(valor_referencia)
+    precio_actual = float(cierres.iloc[-1])
+    if precio_referencia == 0:
+        return None
+    return round((precio_actual - precio_referencia) / precio_referencia * 100, 4)
+
+
 def actualizar_precios() -> bool:
     """
     Toma los componentes guardados por actualizar_pesos(), descarga sus
@@ -397,12 +472,21 @@ def actualizar_precios() -> bool:
     datos_indice = _procesar_componente(TICKER_INDICE, historial, fecha_mercado)
     var_real_qqq = datos_indice["variacion_pct"] if datos_indice else None
 
+    # Variación mensual/anual: histórico aparte, solo del índice. Si falla
+    # (red, ticker sin suficiente historia, etc.) quedan en None y el
+    # frontend ya sabe mostrar "—" en vez de romper.
+    cierres_largos = _descargar_historico_largo(TICKER_INDICE)
+    var_mensual_qqq = _variacion_desde_dias_atras(cierres_largos, fecha_mercado, DIAS_MES)
+    var_anual_qqq = _variacion_desde_dias_atras(cierres_largos, fecha_mercado, DIAS_ANIO)
+
     payload = {
         "indice": TICKER_INDICE,
         "fecha_actualizacion": datetime.now().isoformat(timespec="seconds"),
         "fecha_datos_mercado": fecha_mercado.isoformat(),
         "mercado_operado_hoy": mercado_operado_hoy,
         "variacion_real_qqq": var_real_qqq,
+        "variacion_mensual_qqq": var_mensual_qqq,
+        "variacion_anual_qqq": var_anual_qqq,
         "total_componentes": len(filas),
         "componentes": filas,
         "errores": errores,
