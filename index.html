@@ -131,7 +131,7 @@
   async function init() {
     renderLoading();
     try {
-      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      const res = await fetch(DATA_URL);
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const json = await res.json();
       // Si el JSON viene directo como Array (versión vieja) o dentro de un objeto (versión nueva)
