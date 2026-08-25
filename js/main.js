@@ -1,0 +1,44 @@
+import { DATA_URL } from './config.js';
+import { normalizeFeed } from './normalize.js';
+import { state } from './state.js';
+import { renderLoading, renderError } from './ui/loading-error.js';
+import { renderStats } from './ui/stats.js';
+import { sortAndRenderTable } from './ui/table.js';
+import { initCapture } from './capture.js';
+
+// ---------------------------------------------------------------------------
+// Orquestador. No tiene lógica propia de negocio: solo agarra los elementos
+// del DOM, los pasa a cada módulo, y dispara la carga inicial de datos. Si
+// agregás una feature nueva, se conecta acá con 1-2 líneas.
+// ---------------------------------------------------------------------------
+
+const container = document.getElementById('state-container');
+const statsStrip = document.getElementById('stats-strip');
+const footerLegend = document.getElementById('footer-legend');
+const captureBtn = document.getElementById('btn-captura');
+const captureBtnLabel = document.getElementById('btn-captura-label');
+
+// Requisito 6: leyenda fija en el pie de página.
+footerLegend.textContent = 'Datos diferidos 30 min - Solo con fines educativos - x.com/isaias3g';
+
+initCapture(captureBtn, captureBtnLabel);
+
+init();
+
+async function init() {
+  renderLoading(container, statsStrip);
+  captureBtn.disabled = true;
+  try {
+    const res = await fetch(DATA_URL, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    const normalized = normalizeFeed(json);
+    state.rawData = normalized.items;
+    state.rootData = normalized.root;
+    renderStats(statsStrip, state.rawData);
+    sortAndRenderTable(container);
+    captureBtn.disabled = false;
+  } catch (err) {
+    renderError(container, statsStrip, err);
+  }
+}
