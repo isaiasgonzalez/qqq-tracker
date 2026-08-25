@@ -88,13 +88,13 @@
   const columns = [
     { key: 'ticker', label: 'Ticker', type: 'string', align: 'left' },
     { key: 'nombre', label: 'Nombre', type: 'string', align: 'left' },
-    { key: 'peso', label: 'Peso (%)', type: 'number', align: 'right' },
-    { key: 'variacion_diaria', label: 'Variación Diaria (%)', type: 'number', align: 'right' },
-    { key: 'impacto_qqq', label: 'Impacto en el QQQ', type: 'number', align: 'right' },
+    { key: 'peso_pct', label: 'Peso (%)', type: 'number', align: 'right' },
+    { key: 'variacion_pct', label: 'Variación Diaria (%)', type: 'number', align: 'right' },
+    { key: 'impacto_indice_pct', label: 'Impacto en el QQQ', type: 'number', align: 'right' },
   ];
 
   let rawData = [];
-  let sortState = { key: 'peso', dir: 'desc' };
+  let sortState = { key: 'peso_pct', dir: 'desc' };
 
   init();
 
@@ -104,8 +104,10 @@
       const res = await fetch(DATA_URL, { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const json = await res.json();
-      if (!Array.isArray(json)) throw new Error('Se esperaba un array en el JSON.');
-      rawData = json;
+      // Si el JSON viene directo como Array (versión vieja) o dentro de un objeto (versión nueva)
+      const dataArray = Array.isArray(json) ? json : (json.componentes || []);
+      if (dataArray.length === 0) throw new Error('No se encontraron componentes en el JSON.');
+      rawData = dataArray;
       renderStats(rawData);
       sortAndRenderTable();
     } catch (err) {
@@ -117,9 +119,9 @@
 
   function renderStats(data) {
     statsStrip.replaceChildren();
-    const up = data.filter(function (d) { return Number(d.variacion_diaria) > 0; }).length;
-    const down = data.filter(function (d) { return Number(d.variacion_diaria) < 0; }).length;
-    const netImpact = data.reduce(function (sum, d) { return sum + Number(d.impacto_qqq || 0); }, 0);
+    const up = data.filter(function (d) { return Number(d.variacion_pct) > 0; }).length;
+    const down = data.filter(function (d) { return Number(d.variacion_pct) < 0; }).length;
+    const netImpact = data.reduce(function (sum, d) { return sum + Number(d.impacto_indice_pct || 0); }, 0);
 
     const items = [
       { text: data.length + ' constituyentes', tone: null },
@@ -302,15 +304,15 @@
 
     const tdPeso = document.createElement('td');
     tdPeso.className = 'px-4 py-3 text-right font-data text-[var(--ink-950)]';
-    tdPeso.textContent = formatPercent(item.peso, false);
+    tdPeso.textContent = formatPercent(item.peso_pct, false);
 
     const tdVar = document.createElement('td');
     tdVar.className = 'px-4 py-3 text-right font-data';
-    tdVar.appendChild(buildDelta(item.variacion_diaria));
+    tdVar.appendChild(buildDelta(item.variacion_pct));
 
     const tdImpacto = document.createElement('td');
     tdImpacto.className = 'px-4 py-3 text-right font-data';
-    tdImpacto.appendChild(buildDelta(item.impacto_qqq));
+    tdImpacto.appendChild(buildDelta(item.impacto_indice_pct));
 
     tr.append(tdTicker, tdNombre, tdPeso, tdVar, tdImpacto);
     return tr;
