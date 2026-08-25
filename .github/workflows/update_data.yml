@@ -58,7 +58,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
-          git diff --staged --quiet && echo "sin cambios" || git commit -m "chore: actualizar pesos QQQ [skip ci]"
+          git diff --staged --quiet && echo "sin cambios" || git commit -m "pesos qqq [skip ci]"
           git push origin main
 
   update-prices:
@@ -108,5 +108,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
-          git diff --staged --quiet && echo "sin cambios" || git commit -m "chore: actualizar precios QQQ [skip ci]"
+          git diff --staged --quiet && echo "sin cambios" || git commit -m "precios qqq [skip ci]"
           git push origin main
