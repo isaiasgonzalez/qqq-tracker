@@ -2,7 +2,8 @@ name: Actualización de datos QQQ
 
 on:
   schedule:
-    - cron: '*/30 13-21 * * 1-5'
+    - cron: '30 12,13 * * 1-5'
+    - cron: '0,30 13-21 * * 1-5'
   workflow_dispatch:
 
 permissions:
