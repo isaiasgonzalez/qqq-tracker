@@ -117,13 +117,33 @@ function buildHead(container) {
   return thead;
 }
 
+// Link de cada ticker. Si en algún momento querés apuntar a otro sitio
+// (Google Finance, Bloomberg, etc.) o armar la URL de otra forma, es acá y
+// nada más se entera.
+function buildTickerUrl(ticker) {
+  return 'https://finance.yahoo.com/quote/' + encodeURIComponent(ticker) + '/';
+}
+
+function buildTickerLink(ticker) {
+  const a = document.createElement('a');
+  a.href = buildTickerUrl(ticker);
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.className = 'font-data font-medium text-[var(--ink-950)] hover:underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ink-700)]';
+  a.textContent = ticker; // Requisito 4: siempre textContent, nunca innerHTML.
+  // Evita que el click en el link también dispare el ordenamiento de la
+  // columna si el link estuviera anidado dentro de algo clickeable.
+  a.addEventListener('click', function (e) { e.stopPropagation(); });
+  return a;
+}
+
 function buildRow(item) {
   const tr = document.createElement('tr');
   tr.className = 'border-b border-[var(--ink-150)] last:border-0 hover:bg-[var(--paper)] transition-colors';
 
   const tdTicker = document.createElement('td');
-  tdTicker.className = 'px-4 py-3 font-data font-medium text-[var(--ink-950)] whitespace-nowrap';
-  tdTicker.textContent = item.ticker; // Requisito 4: siempre textContent, nunca innerHTML.
+  tdTicker.className = 'px-4 py-3 whitespace-nowrap';
+  tdTicker.appendChild(buildTickerLink(item.ticker));
 
   const tdNombre = document.createElement('td');
   tdNombre.className = 'px-4 py-3 text-[var(--ink-700)]';
