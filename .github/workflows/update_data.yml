@@ -49,7 +49,7 @@ jobs:
       - name: Ejecutar actualización de pesos
         if: steps.gate.outputs.should_run == 'true'
         # Ajustar esta ruta si el script vive en otro lugar del repo
-        run: python scripts/update_weights.py
+        run: python script.py pesos
 
       - name: Commit y push de qqq_data.json
         if: steps.gate.outputs.should_run == 'true'
@@ -99,7 +99,7 @@ jobs:
       - name: Ejecutar actualización de precios
         if: steps.gate.outputs.should_run == 'true'
         # Ajustar esta ruta si el script vive en otro lugar del repo
-        run: python scripts/update_prices.py
+        run: python script.py precios
 
       - name: Commit y push de qqq_data.json
         if: steps.gate.outputs.should_run == 'true'
