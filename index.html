@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Invesco QQQ · Composición e impacto diario</title>
+<title>QQQ Tracker</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
@@ -52,9 +52,9 @@
 
     <!-- Masthead -->
     <header class="mb-8">
-      <p class="font-data text-[11px] tracking-[0.2em] text-[var(--ink-700)] uppercase mb-2">Índice · Composición diaria</p>
-      <h1 class="font-display font-medium text-4xl sm:text-[2.75rem] leading-tight text-[var(--ink-950)]">Invesco QQQ</h1>
-      <p class="text-[var(--ink-700)] mt-2 text-[15px] max-w-xl">Principales constituyentes, ordenados por peso, con su impacto estimado sobre el índice.</p>
+      <p class="font-data text-[11px] tracking-[0.2em] text-[var(--ink-700)] uppercase mb-2">Variación diaria del índice</p>
+      <h1 class="font-display font-medium text-4xl sm:text-[2.75rem] leading-tight text-[var(--ink-950)]">NASDAQ 100</h1>
+      <p class="text-[var(--ink-700)] mt-2 text-[15px] max-w-xl">Todas las acciones, ordenadas por peso, con su variación diaria y el impacto sobre el índice.</p>
     </header>
 
     <!-- Franja de estadísticas (se completa con JS a partir de los datos cargados) -->
@@ -72,10 +72,34 @@
 
   </div>
 
+<!-- Modal de Desvío (Tracking) -->
+    <dialog id="modal-tracking" class="backdrop:bg-[var(--ink-950)] backdrop:opacity-50 p-6 rounded-sm border border-[var(--ink-150)] shadow-xl w-full max-w-sm text-[var(--ink-950)] open:animate-[fade-in_0.2s_ease-out]">
+      <h3 class="font-display font-medium text-xl mb-2">Desvío (Tracking Error)</h3>
+      <p class="text-sm text-[var(--ink-700)] mb-4">
+        Es la diferencia exacta entre la suma ponderada matemática de las acciones y la cotización real del fondo. ¿Por qué pasa?
+      </p>
+      <ul class="text-sm text-[var(--ink-700)] mb-6 list-disc pl-5 space-y-1">
+        <li>El ETF guarda una parte de la plata en efectivo (cash).</li>
+        <li>Se descuentan las comisiones de administración del fondo.</li>
+        <li>Los porcentajes del archivo local pueden estar levemente redondeados.</li>
+      </ul>
+      <button id="btn-cerrar-modal" class="bg-[var(--ink-950)] text-[var(--surface)] px-4 py-2 text-sm font-medium rounded-sm hover:bg-[var(--ink-700)] transition-colors w-full cursor-pointer">Entendido</button>
+    </dialog>
+
 <script>
+
+  const container = document.getElementById('state-container');
+  const statsStrip = document.getElementById('stats-strip');
+  const footerLegend = document.getElementById('footer-legend');
+
+  // Activar el botón de cerrar del cartelito
+  document.getElementById('btn-cerrar-modal').addEventListener('click', function() {
+    document.getElementById('modal-tracking').close();
+  });
+
 (function () {
   'use strict';
-
+  
   const DATA_URL = 'qqq_data.json';
   const container = document.getElementById('state-container');
   const statsStrip = document.getElementById('stats-strip');
@@ -108,7 +132,7 @@
       const dataArray = Array.isArray(json) ? json : (json.componentes || []);
       if (dataArray.length === 0) throw new Error('No se encontraron componentes en el JSON.');
       rawData = dataArray;
-      renderStats(rawData);
+      renderStats(rawData, json);
       sortAndRenderTable();
     } catch (err) {
       renderError(err);
@@ -117,18 +141,27 @@
 
   // ---------- Estadísticas (franja tipo "cinta de cotización") ----------
 
-  function renderStats(data) {
+  function renderStats(data, jsonRoot) {
     statsStrip.replaceChildren();
     const up = data.filter(function (d) { return Number(d.variacion_pct) > 0; }).length;
     const down = data.filter(function (d) { return Number(d.variacion_pct) < 0; }).length;
     const netImpact = data.reduce(function (sum, d) { return sum + Number(d.impacto_indice_pct || 0); }, 0);
 
     const items = [
-      { text: data.length + ' constituyentes', tone: null },
+      { text: data.length + ' acciones', tone: null },
       { text: up + ' suben', tone: 'gain' },
       { text: down + ' bajan', tone: 'loss' },
-      { text: 'Impacto neto ' + formatPercent(netImpact, true), tone: netImpact > 0 ? 'gain' : netImpact < 0 ? 'loss' : null },
+      { text: 'Impacto neto de ' + formatPercent(netImpact, true), tone: netImpact > 0 ? 'gain' : netImpact < 0 ? 'loss' : null },
     ];
+
+    if (jsonRoot && jsonRoot.variacion_real_qqq !== undefined && jsonRoot.variacion_real_qqq !== null) {
+      const qqqReal = Number(jsonRoot.variacion_real_qqq);
+      items.push({ text: 'Invesco QQQ ' + formatPercent(qqqReal, true), tone: qqqReal > 0 ? 'gain' : qqqReal < 0 ? 'loss' : null });
+      
+      // Calcular Desvío
+      const diff = netImpact - qqqReal;
+      items.push({ text: 'Desvío ' + formatPercent(diff, false), tone: null, clickeable: true });
+    }
 
     items.forEach(function (it, idx) {
       if (idx > 0) {
@@ -137,10 +170,22 @@
         dot.textContent = '·';
         statsStrip.appendChild(dot);
       }
-      const span = document.createElement('span');
-      span.className = it.tone === 'gain' ? 'text-[var(--gain)]' : it.tone === 'loss' ? 'text-[var(--loss)]' : '';
-      span.textContent = it.text;
-      statsStrip.appendChild(span);
+      
+      if (it.clickeable) {
+        // Si es el desvío, lo hacemos botón en vez de texto plano
+        const btn = document.createElement('button');
+        btn.className = 'underline decoration-dotted underline-offset-4 hover:text-[var(--ink-950)] transition-colors cursor-pointer text-[var(--ink-700)]';
+        btn.textContent = it.text;
+        btn.addEventListener('click', function() { 
+          document.getElementById('modal-tracking').showModal(); 
+        });
+        statsStrip.appendChild(btn);
+      } else {
+        const span = document.createElement('span');
+        span.className = it.tone === 'gain' ? 'text-[var(--gain)]' : it.tone === 'loss' ? 'text-[var(--loss)]' : '';
+        span.textContent = it.text;
+        statsStrip.appendChild(span);
+      }
     });
 
     statsStrip.classList.remove('hidden');

@@ -1,43 +1,4 @@
 #!/usr/bin/env python3
-"""
-script.py — Pipeline de datos para el ETF QQQ (Invesco QQQ Trust)
-
-Requisitos:
-    pip install yfinance pandas requests
-
-Modos de uso (CLI):
-    python script.py pesos      -> corre actualizar_pesos()
-    python script.py precios    -> corre actualizar_precios()
-    python script.py todo       -> corre ambos, en secuencia
-
-Archivos generados (en el mismo directorio que este script):
-    qqq_componentes_base.json  -> componentes + peso_pct. Es el archivo "base"
-                                   que actualizar_precios() usa como entrada.
-    qqq_data.json               -> salida final: precio actual, variación %
-                                   diaria e impacto en el índice por
-                                   componente, ordenado por peso.
-
-Nota importante sobre la fuente de pesos oficiales
-----------------------------------------------------
-yfinance (Ticker.funds_data.top_holdings) sólo expone el Top 10 de
-holdings de un ETF, nunca la lista completa (el QQQ tiene ~100
-componentes). Por eso actualizar_pesos() intenta primero descargar el
-export completo de holdings desde URL_HOLDINGS_OFICIALES (pensada para
-apuntar al CSV de holdings del emisor, p. ej. Invesco) y, si esa descarga
-falla por cualquier motivo -la URL venció, el sitio cambió a una SPA que
-ya no expone un link directo, error de red, etc.-, cae automáticamente al
-Top 10 vía yfinance para que el pipeline nunca quede sin datos.
-
-Si el archivo base termina con "fuente": "yfinance_top10", el pipeline
-funcionó pero sólo con 10 de los ~100 componentes: conviene conseguir un
-link de export vigente (holdings del emisor, factsheet, proveedor de
-datos, etc.) y actualizar la constante URL_HOLDINGS_OFICIALES de más
-abajo. El parser (`_parsear_csv_holdings`) está escrito para tolerar
-variaciones razonables de formato (filas de metadata antes del
-encabezado, nombres de columna distintos, pesos en fracción o en
-porcentaje), pero necesita una URL que efectivamente devuelva un CSV.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -433,11 +394,15 @@ def actualizar_precios() -> bool:
 
     filas.sort(key=lambda r: r["peso_pct"], reverse=True)
 
+    datos_indice = _procesar_componente(TICKER_INDICE, historial, fecha_mercado)
+    var_real_qqq = datos_indice["variacion_pct"] if datos_indice else None
+
     payload = {
         "indice": TICKER_INDICE,
         "fecha_actualizacion": datetime.now().isoformat(timespec="seconds"),
         "fecha_datos_mercado": fecha_mercado.isoformat(),
         "mercado_operado_hoy": mercado_operado_hoy,
+        "variacion_real_qqq": var_real_qqq,
         "total_componentes": len(filas),
         "componentes": filas,
         "errores": errores,
