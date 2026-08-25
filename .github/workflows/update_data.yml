@@ -1,20 +1,9 @@
 name: Actualización de datos QQQ
 
-# ---------------------------------------------------------------------------
-# GitHub Actions ejecuta los "schedule" siempre en UTC y no ajusta el horario
-# de verano. Como EE. UU. alterna entre EST (UTC-5) y EDT (UTC-4), cada
-# horario "de pared" en Nueva York equivale a DOS horas UTC distintas según
-# la época del año. Por eso cada disparador tiene dos entradas de cron (una
-# para EST y otra para EDT), y el primer paso de cada job verifica la hora
-# real en America/New_York, descartando la ejecución que no corresponda.
-# Así el job siempre corre a la hora correcta de Nueva York, todo el año.
-# ---------------------------------------------------------------------------
-
 on:
   schedule:
-    - cron: '30 12,13 * * 1-5'    # 8:30 AM hora del Este -> job update-weights
-    - cron: '0,30 13-21 * * 1-5'  # 9:30-16:00 hora del Este cada 30 min -> job update-prices
-  workflow_dispatch:               # permite ejecutar el workflow manualmente desde la UI
+    - cron: '*/30 13-21 * * 1-5'
+  workflow_dispatch:
 
 permissions:
   contents: write   # necesario para que el bot pueda commitear y pushear a main
@@ -68,7 +57,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
-          git diff --staged --quiet && echo "Sin cambios, nada que commitear" || git commit -m "chore: actualizar pesos QQQ [skip ci]"
+          git diff --staged --quiet && echo "sin cambios" || git commit -m "chore: actualizar pesos QQQ [skip ci]"
           git push origin main
 
   update-prices:
@@ -118,5 +107,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
-          git diff --staged --quiet && echo "Sin cambios, nada que commitear" || git commit -m "chore: actualizar precios QQQ [skip ci]"
+          git diff --staged --quiet && echo "sin cambios" || git commit -m "chore: actualizar precios QQQ [skip ci]"
           git push origin main
