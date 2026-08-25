@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Invesco QQQ · Composición e impacto diario</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --ink-950: #12181A;
+    --ink-700: #48525A;
+    --ink-150: #DEE3E1;
+    --paper: #F5F6F2;
+    --surface: #FFFFFF;
+    --gain: #0E7A4C;
+    --loss: #AE2E22;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink-950);
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  .font-display { font-family: 'Fraunces', serif; }
+  .font-data { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+
+  .tri-up, .tri-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  .tri-up { border-bottom: 6px solid currentColor; margin-bottom: 1px; }
+  .tri-down { border-top: 6px solid currentColor; margin-top: 1px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+</style>
+</head>
+<body class="min-h-screen">
+  <div class="max-w-4xl mx-auto px-5 py-12 sm:py-16">
+
+    <!-- Masthead -->
+    <header class="mb-8">
+      <p class="font-data text-[11px] tracking-[0.2em] text-[var(--ink-700)] uppercase mb-2">Índice · Composición diaria</p>
+      <h1 class="font-display font-medium text-4xl sm:text-[2.75rem] leading-tight text-[var(--ink-950)]">Invesco QQQ</h1>
+      <p class="text-[var(--ink-700)] mt-2 text-[15px] max-w-xl">Principales constituyentes, ordenados por peso, con su impacto estimado sobre el índice.</p>
+    </header>
+
+    <!-- Franja de estadísticas (se completa con JS a partir de los datos cargados) -->
+    <div id="stats-strip" class="hidden font-data text-xs text-[var(--ink-700)] border-y border-[var(--ink-150)] py-2.5 mb-6 flex flex-wrap gap-x-2 gap-y-1 items-center uppercase tracking-wide"></div>
+
+    <!-- Tarjeta con la tabla -->
+    <div class="bg-[var(--surface)] border border-[var(--ink-150)] rounded-sm">
+      <div id="state-container"></div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="mt-8 text-center">
+      <p class="font-data text-[11px] tracking-wide text-[var(--ink-700)]" id="footer-legend"></p>
+    </footer>
+
+  </div>
+
+<script>
+(function () {
+  'use strict';
+
+  const DATA_URL = 'qqq_data.json';
+  const container = document.getElementById('state-container');
+  const statsStrip = document.getElementById('stats-strip');
+  const footerLegend = document.getElementById('footer-legend');
+
+  // Requisito 6: leyenda fija en el pie de página.
+  footerLegend.textContent = 'Datos diferidos 15 min - Solo con fines educativos';
+
+  // Definición de columnas: la fuente única de verdad para encabezados, orden y tipo de dato.
+  const columns = [
+    { key: 'ticker', label: 'Ticker', type: 'string', align: 'left' },
+    { key: 'nombre', label: 'Nombre', type: 'string', align: 'left' },
+    { key: 'peso', label: 'Peso (%)', type: 'number', align: 'right' },
+    { key: 'variacion_diaria', label: 'Variación Diaria (%)', type: 'number', align: 'right' },
+    { key: 'impacto_qqq', label: 'Impacto en el QQQ', type: 'number', align: 'right' },
+  ];
+
+  let rawData = [];
+  let sortState = { key: 'peso', dir: 'desc' };
+
+  init();
+
+  async function init() {
+    renderLoading();
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      if (!Array.isArray(json)) throw new Error('Se esperaba un array en el JSON.');
+      rawData = json;
+      renderStats(rawData);
+      sortAndRenderTable();
+    } catch (err) {
+      renderError(err);
+    }
+  }
+
+  // ---------- Estadísticas (franja tipo "cinta de cotización") ----------
+
+  function renderStats(data) {
+    statsStrip.replaceChildren();
+    const up = data.filter(function (d) { return Number(d.variacion_diaria) > 0; }).length;
+    const down = data.filter(function (d) { return Number(d.variacion_diaria) < 0; }).length;
+    const netImpact = data.reduce(function (sum, d) { return sum + Number(d.impacto_qqq || 0); }, 0);
+
+    const items = [
+      { text: data.length + ' constituyentes', tone: null },
+      { text: up + ' suben', tone: 'gain' },
+      { text: down + ' bajan', tone: 'loss' },
+      { text: 'Impacto neto ' + formatPercent(netImpact, true), tone: netImpact > 0 ? 'gain' : netImpact < 0 ? 'loss' : null },
+    ];
+
+    items.forEach(function (it, idx) {
+      if (idx > 0) {
+        const dot = document.createElement('span');
+        dot.className = 'text-[var(--ink-150)]';
+        dot.textContent = '·';
+        statsStrip.appendChild(dot);
+      }
+      const span = document.createElement('span');
+      span.className = it.tone === 'gain' ? 'text-[var(--gain)]' : it.tone === 'loss' ? 'text-[var(--loss)]' : '';
+      span.textContent = it.text;
+      statsStrip.appendChild(span);
+    });
+
+    statsStrip.classList.remove('hidden');
+  }
+
+  // ---------- Estados: cargando / error ----------
+
+  function renderLoading() {
+    statsStrip.classList.add('hidden');
+    container.replaceChildren();
+    const wrap = document.createElement('div');
+    wrap.className = 'flex items-center justify-center gap-3 py-16 text-[var(--ink-700)]';
+    const spinner = document.createElement('div');
+    spinner.className = 'h-3.5 w-3.5 rounded-full border-2 border-[var(--ink-150)] border-t-[var(--ink-700)] animate-spin';
+    const text = document.createElement('span');
+    text.className = 'font-data text-xs uppercase tracking-wide';
+    text.textContent = 'Cargando datos';
+    wrap.append(spinner, text);
+    container.appendChild(wrap);
+  }
+
+  function renderError(err) {
+    statsStrip.classList.add('hidden');
+    container.replaceChildren();
+    const wrap = document.createElement('div');
+    wrap.className = 'px-6 py-14 text-center';
+    const title = document.createElement('p');
+    title.className = 'text-sm font-medium text-[var(--loss)]';
+    title.textContent = 'No se pudieron cargar los datos.';
+    const detail = document.createElement('p');
+    detail.className = 'font-data text-xs text-[var(--ink-700)] mt-3 max-w-md mx-auto leading-relaxed';
+    detail.textContent = 'Verificá que "qqq_data.json" esté junto a este archivo y que lo estés sirviendo desde un servidor local (no abierto como file://). Detalle: ' + err.message;
+    wrap.append(title, detail);
+    container.appendChild(wrap);
+  }
+
+  // ---------- Orden (Requisito 5) ----------
+
+  function sortAndRenderTable() {
+    const key = sortState.key;
+    const dir = sortState.dir;
+    const col = columns.find(function (c) { return c.key === key; });
+    const sorted = rawData.slice().sort(function (a, b) {
+      let av = a[key];
+      let bv = b[key];
+      if (col.type === 'number') {
+        av = Number(av);
+        bv = Number(bv);
+        return dir === 'asc' ? av - bv : bv - av;
+      }
+      av = String(av).toLowerCase();
+      bv = String(bv).toLowerCase();
+      if (av < bv) return dir === 'asc' ? -1 : 1;
+      if (av > bv) return dir === 'asc' ? 1 : -1;
+      return 0;
+    });
+    renderTable(sorted);
+  }
+
+  function onHeaderActivate(key) {
+    if (sortState.key === key) {
+      sortState.dir = sortState.dir === 'asc' ? 'desc' : 'asc';
+    } else {
+      const col = columns.find(function (c) { return c.key === key; });
+      sortState.key = key;
+      sortState.dir = col.type === 'number' ? 'desc' : 'asc';
+    }
+    sortAndRenderTable();
+  }
+
+  // ---------- Tabla ----------
+
+  function renderTable(data) {
+    container.replaceChildren();
+
+    const scrollWrap = document.createElement('div');
+    scrollWrap.className = 'overflow-x-auto';
+
+    const table = document.createElement('table');
+    table.className = 'w-full text-sm border-collapse';
+    table.setAttribute('aria-label', 'Composición del QQQ');
+
+    table.appendChild(buildHead());
+
+    const tbody = document.createElement('tbody');
+    if (data.length === 0) {
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = columns.length;
+      td.className = 'px-4 py-14 text-center text-[var(--ink-700)] text-sm';
+      td.textContent = 'No hay datos disponibles.';
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+    } else {
+      data.forEach(function (item) { tbody.appendChild(buildRow(item)); });
+    }
+    table.appendChild(tbody);
+
+    scrollWrap.appendChild(table);
+    container.appendChild(scrollWrap);
+  }
+
+  function buildHead() {
+    const thead = document.createElement('thead');
+    const headRow = document.createElement('tr');
+    headRow.className = 'border-b border-[var(--ink-150)]';
+
+    columns.forEach(function (col) {
+      const isActive = sortState.key === col.key;
+
+      const th = document.createElement('th');
+      th.scope = 'col';
+      th.tabIndex = 0;
+      th.setAttribute('aria-sort', isActive ? (sortState.dir === 'asc' ? 'ascending' : 'descending') : 'none');
+      th.className = [
+        'select-none cursor-pointer whitespace-nowrap px-4 py-3 font-data text-[11px] uppercase tracking-wider transition-colors',
+        'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--ink-700)]',
+        isActive ? 'text-[var(--ink-950)]' : 'text-[var(--ink-700)] hover:text-[var(--ink-950)]',
+        col.align === 'right' ? 'text-right' : 'text-left',
+      ].join(' ');
+
+      const inner = document.createElement('span');
+      inner.className = 'inline-flex items-center gap-1.5' + (col.align === 'right' ? ' flex-row-reverse' : '');
+
+      const label = document.createElement('span');
+      label.textContent = col.label;
+      inner.appendChild(label);
+
+      if (isActive) {
+        const tri = document.createElement('span');
+        tri.className = sortState.dir === 'asc' ? 'tri-up' : 'tri-down';
+        inner.appendChild(tri);
+      }
+
+      th.appendChild(inner);
+      th.addEventListener('click', function () { onHeaderActivate(col.key); });
+      th.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onHeaderActivate(col.key);
+        }
+      });
+      headRow.appendChild(th);
+    });
+
+    thead.appendChild(headRow);
+    return thead;
+  }
+
+  function buildRow(item) {
+    const tr = document.createElement('tr');
+    tr.className = 'border-b border-[var(--ink-150)] last:border-0 hover:bg-[var(--paper)] transition-colors';
+
+    const tdTicker = document.createElement('td');
+    tdTicker.className = 'px-4 py-3 font-data font-medium text-[var(--ink-950)] whitespace-nowrap';
+    tdTicker.textContent = item.ticker; // Requisito 4: siempre textContent, nunca innerHTML.
+
+    const tdNombre = document.createElement('td');
+    tdNombre.className = 'px-4 py-3 text-[var(--ink-700)]';
+    tdNombre.textContent = item.nombre;
+
+    const tdPeso = document.createElement('td');
+    tdPeso.className = 'px-4 py-3 text-right font-data text-[var(--ink-950)]';
+    tdPeso.textContent = formatPercent(item.peso, false);
+
+    const tdVar = document.createElement('td');
+    tdVar.className = 'px-4 py-3 text-right font-data';
+    tdVar.appendChild(buildDelta(item.variacion_diaria));
+
+    const tdImpacto = document.createElement('td');
+    tdImpacto.className = 'px-4 py-3 text-right font-data';
+    tdImpacto.appendChild(buildDelta(item.impacto_qqq));
+
+    tr.append(tdTicker, tdNombre, tdPeso, tdVar, tdImpacto);
+    return tr;
+  }
+
+  // Requisito 3: verde para positivo, rojo para negativo.
+  function buildDelta(value) {
+    const num = Number(value);
+    const positive = num > 0;
+    const negative = num < 0;
+
+    const span = document.createElement('span');
+    span.className = 'inline-flex items-center justify-end ' +
+      (positive ? 'text-[var(--gain)]' : negative ? 'text-[var(--loss)]' : 'text-[var(--ink-700)]');
+
+    if (positive || negative) {
+      const tri = document.createElement('span');
+      tri.className = positive ? 'tri-up' : 'tri-down';
+      span.appendChild(tri);
+    }
+
+    const numSpan = document.createElement('span');
+    numSpan.textContent = formatPercent(num, true); // dato en texto plano vía textContent
+    span.appendChild(numSpan);
+    return span;
+  }
+
+  function formatPercent(value, withSign) {
+    const num = Number(value);
+    if (Number.isNaN(num)) return '—';
+    const formatted = Math.abs(num).toFixed(2) + '%';
+    if (!withSign) return formatted;
+    if (num > 0) return '+' + formatted;
+    if (num < 0) return '-' + formatted;
+    return formatted;
+  }
+})();
+</script>
+</body>
+</html>
