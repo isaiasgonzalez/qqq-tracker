@@ -1,81 +1,29 @@
-name: Actualización de datos QQQ
+name: Actualización de precios QQQ
 
 on:
   schedule:
-    - cron: '30 12,13 * * 1-5'
-    - cron: '0,30 13-21 * * 1-5'
+    - cron: '*/15 13-21 * * 1-5'
+    - cron: '0 22 * * 1-5'
   workflow_dispatch:
 
 permissions:
   contents: write   # necesario para que el bot pueda commitear y pushear a main
 
 jobs:
-  update-weights:
-    name: Actualizar pesos (8:30 AM ET)
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 12,13 * * 1-5'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verificar hora real en Nueva York
-        id: gate
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          now_et=$(TZ='America/New_York' date +'%H:%M')
-          echo "Hora actual en Nueva York: $now_et"
-          # Tolerancia de +/-10 min por si GitHub Actions retrasa el disparo
-          if [[ "$now_et" > "08:24" && "$now_et" < "08:40" ]]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_run=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Checkout del repositorio
-        if: steps.gate.outputs.should_run == 'true'
-        uses: actions/checkout@v7
-        with:
-          ref: main
-
-      - name: Configurar entorno Python
-        if: steps.gate.outputs.should_run == 'true'
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.13'
-
-      - name: Instalar dependencias
-        if: steps.gate.outputs.should_run == 'true'
-        run: pip install yfinance pandas
-
-      - name: Ejecutar actualización de pesos
-        if: steps.gate.outputs.should_run == 'true'
-        # Ajustar esta ruta si el script vive en otro lugar del repo
-        run: python script.py pesos
-
-      - name: Commit y push de qqq_data.json
-        if: steps.gate.outputs.should_run == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add qqq_data.json
-          git diff --staged --quiet && echo "sin cambios" || git commit -m "pesos qqq [skip ci]"
-          git push origin main
-
   update-prices:
-    name: Actualizar precios (cada 30 min, 9:30-16:00 ET)
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0,30 13-21 * * 1-5'
+    name: Actualizar precios (cada 15 min, 10:00-19:00 ART)
     runs-on: ubuntu-latest
     steps:
-      - name: Verificar hora real en Nueva York
+      - name: Verificar hora real en Argentina
         id: gate
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "should_run=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          now_et=$(TZ='America/New_York' date +'%H:%M')
-          echo "Hora actual en Nueva York: $now_et"
-          if [[ "$now_et" < "09:30" || "$now_et" > "16:00" ]]; then
+          now_ar=$(TZ='America/Argentina/Buenos_Aires' date +'%H:%M')
+          echo "Hora actual en Argentina: $now_ar"
+          if [[ "$now_ar" < "10:00" || "$now_ar" > "19:00" ]]; then
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
             echo "should_run=true" >> "$GITHUB_OUTPUT"
@@ -99,7 +47,6 @@ jobs:
 
       - name: Ejecutar actualización de precios
         if: steps.gate.outputs.should_run == 'true'
-        # Ajustar esta ruta si el script vive en otro lugar del repo
         run: python script.py precios
 
       - name: Commit y push de qqq_data.json
