@@ -6,6 +6,7 @@ import { renderStats } from './ui/stats.js';
 import { renderIndexPerformance } from './ui/index-performance.js';
 import { sortAndRenderTable } from './ui/table.js';
 import { initCapture } from './capture.js';
+import { initSearch } from './ui/search.js';
 
 // ---------------------------------------------------------------------------
 // Orquestador. No tiene lógica propia de negocio: solo agarra los elementos
@@ -19,11 +20,13 @@ const indexPerformanceEl = document.getElementById('index-performance');
 const footerLegend = document.getElementById('footer-legend');
 const captureBtn = document.getElementById('btn-captura');
 const captureBtnLabel = document.getElementById('btn-captura-label');
+const searchInput = document.getElementById('input-buscar-ticker');
 
 // Requisito 6: leyenda fija en el pie de página.
 footerLegend.textContent = 'Datos diferidos 30 min - Solo con fines informativos - x.com/isaias3g';
 
 initCapture(captureBtn, captureBtnLabel);
+initSearch(searchInput, function () { sortAndRenderTable(container); });
 
 init();
 
@@ -31,6 +34,7 @@ async function init() {
   renderLoading(container, statsStrip);
   indexPerformanceEl.classList.add('hidden');
   captureBtn.disabled = true;
+  searchInput.disabled = true;
   try {
     const res = await fetch(DATA_URL, { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -46,6 +50,7 @@ async function init() {
     });
     sortAndRenderTable(container);
     captureBtn.disabled = false;
+    searchInput.disabled = false;
   } catch (err) {
     renderError(container, statsStrip, err);
     indexPerformanceEl.classList.add('hidden');

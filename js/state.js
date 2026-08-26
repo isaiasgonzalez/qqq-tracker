@@ -9,6 +9,7 @@ export const state = {
   rawData: [],
   rootData: null, // objeto raíz del JSON cuando trae variacion_real_qqq (ver normalize.js)
   sortState: { key: 'peso', dir: 'desc' },
+  searchQuery: '', // texto tipeado en el buscador de ticker (ver ui/search.js)
 };
 
 // Usa la variación real del índice si vino en el JSON (rootData.variacion_real_qqq);

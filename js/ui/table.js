@@ -12,7 +12,11 @@ export function sortAndRenderTable(container) {
   const key = state.sortState.key;
   const dir = state.sortState.dir;
   const col = columns.find(function (c) { return c.key === key; });
-  const sorted = state.rawData.slice().sort(function (a, b) {
+  const query = state.searchQuery.trim().toLowerCase();
+  const filtered = query
+    ? state.rawData.filter(function (item) { return String(item.ticker).toLowerCase().includes(query); })
+    : state.rawData.slice();
+  const sorted = filtered.sort(function (a, b) {
     let av = a[key];
     let bv = b[key];
     if (col.type === 'number') {
