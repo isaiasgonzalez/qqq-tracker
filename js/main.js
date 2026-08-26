@@ -21,7 +21,7 @@ const captureBtn = document.getElementById('btn-captura');
 const captureBtnLabel = document.getElementById('btn-captura-label');
 
 // Requisito 6: leyenda fija en el pie de página.
-footerLegend.textContent = 'Datos diferidos 15 min - Solo con fines educativos';
+footerLegend.textContent = 'Datos diferidos 30 min - Solo con fines informativos - x.com/isaias3g';
 
 initCapture(captureBtn, captureBtnLabel);
 
