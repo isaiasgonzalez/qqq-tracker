@@ -80,9 +80,12 @@ function buildCaptureCard() {
   eyebrow.style.cssText = 'font-family:' + MONO + '; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-700); margin:0 0 6px 0;';
   eyebrow.textContent = 'Resumen diario · ' + fechaHoy;
   const title = document.createElement('p');
-  title.style.cssText = 'font-family:' + SERIF + '; font-weight:500; font-size:26px; color:var(--ink-950); margin:0;';
+  title.style.cssText = 'font-family:' + SERIF + '; font-weight:500; font-size:26px; color:var(--ink-950); margin:0 0 8px 0;';
   title.textContent = 'Invesco QQQ';
-  header.append(eyebrow, title);
+  const legend = document.createElement('p');
+  legend.style.cssText = 'font-family:' + MONO + '; font-size:10px; letter-spacing:0.05em; color:var(--ink-700); margin:0;';
+  legend.textContent = 'qqq-tracker.vercel.app | x.com/isaias3g';
+  header.append(eyebrow, title, legend);
 
   // Cifra principal: variación total del índice en el día.
   const hero = document.createElement('div');
@@ -107,13 +110,7 @@ function buildCaptureCard() {
   colBaja.style.cssText += 'flex:1 1 0%; min-width:0; padding-left:20px; border-left:1px solid var(--ink-150);';
   cols.append(colSuba, colBaja);
 
-  const footer = document.createElement('div');
-  footer.style.cssText = 'margin-top:20px; padding-top:12px; border-top:1px solid var(--ink-150);';
-  const legend = document.createElement('p');
-  legend.style.cssText = 'font-family:' + MONO + '; font-size:10px; letter-spacing:0.05em; color:var(--ink-700); margin:0;';
-  legend.textContent = 'qqq-tracker.vercel.app | x.com/isaias3g';  footer.appendChild(legend);
-
-  card.append(header, hero, cols, footer);
+  card.append(header, hero, cols);
   return card;
 }
 
