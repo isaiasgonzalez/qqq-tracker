@@ -111,8 +111,7 @@ function buildCaptureCard() {
   footer.style.cssText = 'margin-top:20px; padding-top:12px; border-top:1px solid var(--ink-150);';
   const legend = document.createElement('p');
   legend.style.cssText = 'font-family:' + MONO + '; font-size:10px; letter-spacing:0.05em; color:var(--ink-700); margin:0;';
-  legend.textContent = 'Datos diferidos 30 min - Solo con fines informativos - x.com/isaias3g';
-  footer.appendChild(legend);
+  legend.textContent = 'qqq-tracker.vercel.app | x.com/isaias3g';  footer.appendChild(legend);
 
   card.append(header, hero, cols, footer);
   return card;
