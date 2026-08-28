@@ -39,7 +39,7 @@ permissions:
 
 jobs:
   update-prices:
-    name: Actualizar precios (cada 15 min, 10:00-19:00 ART)
+    name: Actualizar precios
     runs-on: ubuntu-latest
     steps:
       - name: Verificar hora real en Argentina
@@ -83,4 +83,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
-          git diff --staged --quiet && echo "sin cambios" || git commit -m "precios qqq"          git push origin main
+          git diff --staged --quiet && echo "sin cambios" || git commit -m "precios qqq"
+          git push origin main          if [[ "$now_ar" < "10:00" || "$now_ar" > "18:00" ]]; then
