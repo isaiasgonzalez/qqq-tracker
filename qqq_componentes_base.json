@@ -1,98 +1,103 @@
 {
   "indice": "QQQ",
   "fuente": "csv_local_100",
-<<<<<<< HEAD
-  "fecha_actualizacion": "2026-08-27T11:19:43",
-=======
-  "fecha_actualizacion": "2026-08-28T10:32:02",
->>>>>>> test
-  "total_componentes": 102,
+  "fecha_actualizacion": "2026-08-28T10:35:32",
+  "total_componentes": 186,
   "componentes": [
     {
       "ticker": "NVDA",
       "nombre": "NVIDIA Corp",
-<<<<<<< HEAD
-      "peso_pct": 8.15
-=======
       "peso_pct": 8.74
->>>>>>> test
+    },
+    {
+      "ticker": "NVDA",
+      "nombre": "NVIDIA Corp",
+      "peso_pct": 8.15
     },
     {
       "ticker": "AAPL",
       "nombre": "Apple Inc",
-<<<<<<< HEAD
       "peso_pct": 7.39
-=======
+    },
+    {
+      "ticker": "AAPL",
+      "nombre": "Apple Inc",
       "peso_pct": 7.32
->>>>>>> test
     },
     {
       "ticker": "MSFT",
       "nombre": "Microsoft Corp",
-<<<<<<< HEAD
-      "peso_pct": 5.93
-=======
       "peso_pct": 5.95
->>>>>>> test
+    },
+    {
+      "ticker": "MSFT",
+      "nombre": "Microsoft Corp",
+      "peso_pct": 5.93
     },
     {
       "ticker": "MU",
       "nombre": "Micron Technology Inc",
-<<<<<<< HEAD
       "peso_pct": 4.69
-=======
+    },
+    {
+      "ticker": "MU",
+      "nombre": "Micron Technology Inc",
       "peso_pct": 4.61
->>>>>>> test
     },
     {
       "ticker": "AMZN",
       "nombre": "Amazon.com Inc",
-<<<<<<< HEAD
       "peso_pct": 4.5
-=======
+    },
+    {
+      "ticker": "AMZN",
+      "nombre": "Amazon.com Inc",
       "peso_pct": 4.37
->>>>>>> test
     },
     {
       "ticker": "AMD",
       "nombre": "Advanced Micro Devices Inc",
-<<<<<<< HEAD
       "peso_pct": 3.48
-=======
+    },
+    {
+      "ticker": "AMD",
+      "nombre": "Advanced Micro Devices Inc",
       "peso_pct": 3.4
->>>>>>> test
     },
     {
       "ticker": "GOOGL",
       "nombre": "Alphabet Inc Class A",
-<<<<<<< HEAD
       "peso_pct": 3.2
-=======
+    },
+    {
+      "ticker": "GOOGL",
+      "nombre": "Alphabet Inc Class A",
       "peso_pct": 3.14
->>>>>>> test
     },
     {
       "ticker": "GOOG",
       "nombre": "Alphabet Inc Class C",
-<<<<<<< HEAD
       "peso_pct": 2.97
-=======
+    },
+    {
+      "ticker": "GOOG",
+      "nombre": "Alphabet Inc Class C",
       "peso_pct": 2.92
->>>>>>> test
     },
     {
       "ticker": "TSLA",
       "nombre": "Tesla Inc",
-<<<<<<< HEAD
-      "peso_pct": 2.77
-=======
       "peso_pct": 2.81
     },
     {
       "ticker": "AVGO",
       "nombre": "Broadcom Inc",
       "peso_pct": 2.79
->>>>>>> test
+    },
+    {
+      "ticker": "TSLA",
+      "nombre": "Tesla Inc",
+      "peso_pct": 2.77
     },
     {
       "ticker": "META",
@@ -105,48 +110,58 @@
       "peso_pct": 2.71
     },
     {
+      "ticker": "META",
+      "nombre": "Meta Platforms Inc",
+      "peso_pct": 2.68
+    },
+    {
       "ticker": "WMT",
       "nombre": "Walmart Inc",
-<<<<<<< HEAD
       "peso_pct": 2.26
-=======
+    },
+    {
+      "ticker": "WMT",
+      "nombre": "Walmart Inc",
       "peso_pct": 2.19
->>>>>>> test
     },
     {
       "ticker": "INTC",
       "nombre": "Intel Corp",
-<<<<<<< HEAD
-      "peso_pct": 1.97
-=======
       "peso_pct": 2.02
->>>>>>> test
+    },
+    {
+      "ticker": "INTC",
+      "nombre": "Intel Corp",
+      "peso_pct": 1.97
     },
     {
       "ticker": "CSCO",
       "nombre": "Cisco Systems Inc",
-<<<<<<< HEAD
       "peso_pct": 1.96
+    },
+    {
+      "ticker": "CSCO",
+      "nombre": "Cisco Systems Inc",
+      "peso_pct": 1.93
     },
     {
       "ticker": "COST",
       "nombre": "Costco Wholesale Corp",
       "peso_pct": 1.88
-=======
-      "peso_pct": 1.93
->>>>>>> test
     },
     {
       "ticker": "PLTR",
       "nombre": "Palantir Technologies Inc",
-<<<<<<< HEAD
-=======
       "peso_pct": 1.87
     },
     {
       "ticker": "COST",
       "nombre": "Costco Wholesale Corp",
->>>>>>> test
+      "peso_pct": 1.81
+    },
+    {
+      "ticker": "PLTR",
+      "nombre": "Palantir Technologies Inc",
       "peso_pct": 1.81
     },
     {
@@ -155,45 +170,54 @@
       "peso_pct": 1.74
     },
     {
+      "ticker": "LRCX",
+      "nombre": "Lam Research Corp",
+      "peso_pct": 1.73
+    },
+    {
       "ticker": "AMAT",
       "nombre": "Applied Materials Inc",
-<<<<<<< HEAD
       "peso_pct": 1.69
-=======
+    },
+    {
+      "ticker": "AMAT",
+      "nombre": "Applied Materials Inc",
       "peso_pct": 1.68
->>>>>>> test
     },
     {
       "ticker": "NFLX",
       "nombre": "Netflix Inc",
-<<<<<<< HEAD
       "peso_pct": 1.52
-=======
+    },
+    {
+      "ticker": "NFLX",
+      "nombre": "Netflix Inc",
       "peso_pct": 1.47
->>>>>>> test
     },
     {
       "ticker": "PANW",
       "nombre": "Palo Alto Networks Inc",
-<<<<<<< HEAD
-      "peso_pct": 1.23
-=======
       "peso_pct": 1.37
->>>>>>> test
+    },
+    {
+      "ticker": "PANW",
+      "nombre": "Palo Alto Networks Inc",
+      "peso_pct": 1.23
     },
     {
       "ticker": "SPCX",
       "nombre": "Space Exploration Technologies Corp",
-<<<<<<< HEAD
       "peso_pct": 1.19
+    },
+    {
+      "ticker": "SPCX",
+      "nombre": "Space Exploration Technologies Corp",
+      "peso_pct": 1.18
     },
     {
       "ticker": "KLAC",
       "nombre": "KLA Corp",
       "peso_pct": 1.07
-=======
-      "peso_pct": 1.18
->>>>>>> test
     },
     {
       "ticker": "TXN",
@@ -201,36 +225,16 @@
       "peso_pct": 1.06
     },
     {
-<<<<<<< HEAD
+      "ticker": "TXN",
+      "nombre": "Texas Instruments Inc",
+      "peso_pct": 1.06
+    },
+    {
       "ticker": "AMGN",
       "nombre": "Amgen Inc",
       "peso_pct": 1.06
     },
     {
-      "ticker": "LIN",
-      "nombre": "Linde PLC",
-      "peso_pct": 1.01
-    },
-    {
-      "ticker": "SNDK",
-      "nombre": "Sandisk Corp",
-      "peso_pct": 0.98
-    },
-    {
-      "ticker": "MRVL",
-      "nombre": "Marvell Technology Inc",
-      "peso_pct": 0.95
-    },
-    {
-      "ticker": "PEP",
-      "nombre": "PepsiCo Inc",
-      "peso_pct": 0.86
-    },
-    {
-      "ticker": "TMUS",
-      "nombre": "T-Mobile US Inc",
-      "peso_pct": 0.86
-=======
       "ticker": "KLAC",
       "nombre": "KLA Corp",
       "peso_pct": 1.05
@@ -239,36 +243,25 @@
       "ticker": "AMGN",
       "nombre": "Amgen Inc",
       "peso_pct": 1.04
->>>>>>> test
+    },
+    {
+      "ticker": "LIN",
+      "nombre": "Linde PLC",
+      "peso_pct": 1.01
     },
     {
       "ticker": "CRWD",
       "nombre": "Crowdstrike Holdings Inc",
-<<<<<<< HEAD
-      "peso_pct": 0.85
-    },
-    {
-      "ticker": "STX",
-      "nombre": "Seagate Technology Holdings PLC",
-      "peso_pct": 0.84
-    },
-    {
-      "ticker": "GILD",
-      "nombre": "Gilead Sciences Inc",
-      "peso_pct": 0.82
-    },
-    {
-      "ticker": "SHOP",
-      "nombre": "Shopify Inc",
-      "peso_pct": 0.81
-    },
-    {
-=======
       "peso_pct": 1.01
     },
     {
       "ticker": "LIN",
       "nombre": "Linde PLC",
+      "peso_pct": 0.98
+    },
+    {
+      "ticker": "SNDK",
+      "nombre": "Sandisk Corp",
       "peso_pct": 0.98
     },
     {
@@ -279,11 +272,36 @@
     {
       "ticker": "MRVL",
       "nombre": "Marvell Technology Inc",
+      "peso_pct": 0.95
+    },
+    {
+      "ticker": "MRVL",
+      "nombre": "Marvell Technology Inc",
       "peso_pct": 0.92
+    },
+    {
+      "ticker": "PEP",
+      "nombre": "PepsiCo Inc",
+      "peso_pct": 0.86
     },
     {
       "ticker": "TMUS",
       "nombre": "T-Mobile US Inc",
+      "peso_pct": 0.86
+    },
+    {
+      "ticker": "CRWD",
+      "nombre": "Crowdstrike Holdings Inc",
+      "peso_pct": 0.85
+    },
+    {
+      "ticker": "TMUS",
+      "nombre": "T-Mobile US Inc",
+      "peso_pct": 0.84
+    },
+    {
+      "ticker": "STX",
+      "nombre": "Seagate Technology Holdings PLC",
       "peso_pct": 0.84
     },
     {
@@ -297,6 +315,11 @@
       "peso_pct": 0.83
     },
     {
+      "ticker": "GILD",
+      "nombre": "Gilead Sciences Inc",
+      "peso_pct": 0.82
+    },
+    {
       "ticker": "SHOP",
       "nombre": "Shopify Inc",
       "peso_pct": 0.82
@@ -307,7 +330,16 @@
       "peso_pct": 0.81
     },
     {
->>>>>>> test
+      "ticker": "SHOP",
+      "nombre": "Shopify Inc",
+      "peso_pct": 0.81
+    },
+    {
+      "ticker": "ADI",
+      "nombre": "Analog Devices Inc",
+      "peso_pct": 0.8
+    },
+    {
       "ticker": "ADI",
       "nombre": "Analog Devices Inc",
       "peso_pct": 0.8
@@ -315,8 +347,12 @@
     {
       "ticker": "QCOM",
       "nombre": "QUALCOMM Inc",
-<<<<<<< HEAD
       "peso_pct": 0.77
+    },
+    {
+      "ticker": "QCOM",
+      "nombre": "QUALCOMM Inc",
+      "peso_pct": 0.76
     },
     {
       "ticker": "BKNG",
@@ -327,9 +363,11 @@
       "ticker": "WDC",
       "nombre": "Western Digital Corp",
       "peso_pct": 0.72
-=======
-      "peso_pct": 0.76
->>>>>>> test
+    },
+    {
+      "ticker": "ASML",
+      "nombre": "ASML Holding NV",
+      "peso_pct": 0.71
     },
     {
       "ticker": "ASML",
@@ -337,8 +375,6 @@
       "peso_pct": 0.7
     },
     {
-<<<<<<< HEAD
-=======
       "ticker": "WDC",
       "nombre": "Western Digital Corp",
       "peso_pct": 0.7
@@ -349,7 +385,11 @@
       "peso_pct": 0.69
     },
     {
->>>>>>> test
+      "ticker": "VRTX",
+      "nombre": "Vertex Pharmaceuticals Inc",
+      "peso_pct": 0.62
+    },
+    {
       "ticker": "VRTX",
       "nombre": "Vertex Pharmaceuticals Inc",
       "peso_pct": 0.61
@@ -357,22 +397,21 @@
     {
       "ticker": "ISRG",
       "nombre": "Intuitive Surgical Inc",
-<<<<<<< HEAD
       "peso_pct": 0.58
     },
     {
-      "ticker": "SBUX",
-      "nombre": "Starbucks Corp",
-      "peso_pct": 0.55
-=======
+      "ticker": "ISRG",
+      "nombre": "Intuitive Surgical Inc",
       "peso_pct": 0.57
->>>>>>> test
     },
     {
       "ticker": "FTNT",
       "nombre": "Fortinet Inc",
-<<<<<<< HEAD
-=======
+      "peso_pct": 0.55
+    },
+    {
+      "ticker": "SBUX",
+      "nombre": "Starbucks Corp",
       "peso_pct": 0.55
     },
     {
@@ -381,23 +420,34 @@
       "peso_pct": 0.54
     },
     {
+      "ticker": "FTNT",
+      "nombre": "Fortinet Inc",
+      "peso_pct": 0.51
+    },
+    {
       "ticker": "ADBE",
       "nombre": "Adobe Inc",
->>>>>>> test
       "peso_pct": 0.51
     },
     {
       "ticker": "ADP",
       "nombre": "Automatic Data Processing Inc",
       "peso_pct": 0.5
-<<<<<<< HEAD
+    },
+    {
+      "ticker": "ADP",
+      "nombre": "Automatic Data Processing Inc",
+      "peso_pct": 0.5
     },
     {
       "ticker": "ADBE",
       "nombre": "Adobe Inc",
       "peso_pct": 0.49
-=======
->>>>>>> test
+    },
+    {
+      "ticker": "ARM",
+      "nombre": "ARM Holdings PLC",
+      "peso_pct": 0.47
     },
     {
       "ticker": "ARM",
@@ -410,14 +460,18 @@
       "peso_pct": 0.45
     },
     {
+      "ticker": "CEG",
+      "nombre": "Constellation Energy Corp",
+      "peso_pct": 0.45
+    },
+    {
       "ticker": "MELI",
       "nombre": "MercadoLibre Inc",
-<<<<<<< HEAD
       "peso_pct": 0.44
     },
     {
-      "ticker": "DASH",
-      "nombre": "DoorDash Inc",
+      "ticker": "CSX",
+      "nombre": "CSX Corp",
       "peso_pct": 0.43
     },
     {
@@ -426,21 +480,23 @@
       "peso_pct": 0.43
     },
     {
-      "ticker": "CSX",
-      "nombre": "CSX Corp",
-      "peso_pct": 0.43
-=======
+      "ticker": "DASH",
+      "nombre": "DoorDash Inc",
       "peso_pct": 0.43
     },
     {
-      "ticker": "APP",
-      "nombre": "AppLovin Corp",
+      "ticker": "MELI",
+      "nombre": "MercadoLibre Inc",
+      "peso_pct": 0.43
+    },
+    {
+      "ticker": "INTU",
+      "nombre": "Intuit Inc",
       "peso_pct": 0.42
->>>>>>> test
     },
     {
-      "ticker": "APP",
-      "nombre": "AppLovin Corp",
+      "ticker": "DASH",
+      "nombre": "DoorDash Inc",
       "peso_pct": 0.42
     },
     {
@@ -449,26 +505,6 @@
       "peso_pct": 0.42
     },
     {
-      "ticker": "INTU",
-      "nombre": "Intuit Inc",
-      "peso_pct": 0.42
-    },
-    {
-<<<<<<< HEAD
-      "ticker": "MNST",
-      "nombre": "Monster Beverage Corp",
-      "peso_pct": 0.41
-    },
-    {
-      "ticker": "CDNS",
-      "nombre": "Cadence Design Systems Inc",
-      "peso_pct": 0.41
-    },
-    {
-      "ticker": "REGN",
-      "nombre": "Regeneron Pharmaceuticals Inc",
-      "peso_pct": 0.37
-=======
       "ticker": "CDNS",
       "nombre": "Cadence Design Systems Inc",
       "peso_pct": 0.42
@@ -477,6 +513,26 @@
       "ticker": "CSX",
       "nombre": "CSX Corp",
       "peso_pct": 0.42
+    },
+    {
+      "ticker": "MAR",
+      "nombre": "Marriott International Inc/MD",
+      "peso_pct": 0.42
+    },
+    {
+      "ticker": "APP",
+      "nombre": "AppLovin Corp",
+      "peso_pct": 0.42
+    },
+    {
+      "ticker": "APP",
+      "nombre": "AppLovin Corp",
+      "peso_pct": 0.42
+    },
+    {
+      "ticker": "CDNS",
+      "nombre": "Cadence Design Systems Inc",
+      "peso_pct": 0.41
     },
     {
       "ticker": "CMCSA",
@@ -491,17 +547,31 @@
     {
       "ticker": "MNST",
       "nombre": "Monster Beverage Corp",
+      "peso_pct": 0.41
+    },
+    {
+      "ticker": "MNST",
+      "nombre": "Monster Beverage Corp",
       "peso_pct": 0.4
     },
     {
       "ticker": "SNPS",
       "nombre": "Synopsys Inc",
       "peso_pct": 0.39
->>>>>>> test
     },
     {
       "ticker": "CTAS",
       "nombre": "Cintas Corp",
+      "peso_pct": 0.37
+    },
+    {
+      "ticker": "REGN",
+      "nombre": "Regeneron Pharmaceuticals Inc",
+      "peso_pct": 0.37
+    },
+    {
+      "ticker": "MDLZ",
+      "nombre": "Mondelez International Inc",
       "peso_pct": 0.36
     },
     {
@@ -510,22 +580,34 @@
       "peso_pct": 0.36
     },
     {
+      "ticker": "CTAS",
+      "nombre": "Cintas Corp",
+      "peso_pct": 0.36
+    },
+    {
+      "ticker": "MDLZ",
+      "nombre": "Mondelez International Inc",
+      "peso_pct": 0.35
+    },
+    {
+      "ticker": "ABNB",
+      "nombre": "Airbnb Inc",
+      "peso_pct": 0.35
+    },
+    {
       "ticker": "DDOG",
       "nombre": "Datadog Inc",
       "peso_pct": 0.35
     },
     {
-      "ticker": "MDLZ",
-      "nombre": "Mondelez International Inc",
-<<<<<<< HEAD
-      "peso_pct": 0.36
-    },
-    {
       "ticker": "SNPS",
       "nombre": "Synopsys Inc",
-=======
->>>>>>> test
       "peso_pct": 0.35
+    },
+    {
+      "ticker": "ROST",
+      "nombre": "Ross Stores Inc",
+      "peso_pct": 0.34
     },
     {
       "ticker": "ABNB",
@@ -533,45 +615,49 @@
       "peso_pct": 0.34
     },
     {
-      "ticker": "LITE",
-      "nombre": "Lumentum Holdings Inc",
+      "ticker": "ORLY",
+      "nombre": "O'Reilly Automotive Inc",
       "peso_pct": 0.33
     },
     {
-<<<<<<< HEAD
-      "ticker": "ROST",
-      "nombre": "Ross Stores Inc",
-      "peso_pct": 0.34
+      "ticker": "LITE",
+      "nombre": "Lumentum Holdings Inc",
+      "peso_pct": 0.33
     },
     {
       "ticker": "DDOG",
       "nombre": "Datadog Inc",
       "peso_pct": 0.33
-=======
-      "ticker": "ORLY",
-      "nombre": "O'Reilly Automotive Inc",
-      "peso_pct": 0.32
     },
     {
-      "ticker": "ROST",
-      "nombre": "Ross Stores Inc",
-      "peso_pct": 0.32
->>>>>>> test
-    },
-    {
-      "ticker": "ORLY",
-      "nombre": "O'Reilly Automotive Inc",
-      "peso_pct": 0.33
-    },
-    {
-      "ticker": "LITE",
-      "nombre": "Lumentum Holdings Inc",
+      "ticker": "WBD",
+      "nombre": "Warner Bros Discovery Inc",
       "peso_pct": 0.32
     },
     {
       "ticker": "WBD",
       "nombre": "Warner Bros Discovery Inc",
       "peso_pct": 0.32
+    },
+    {
+      "ticker": "LITE",
+      "nombre": "Lumentum Holdings Inc",
+      "peso_pct": 0.32
+    },
+    {
+      "ticker": "ROST",
+      "nombre": "Ross Stores Inc",
+      "peso_pct": 0.32
+    },
+    {
+      "ticker": "ORLY",
+      "nombre": "O'Reilly Automotive Inc",
+      "peso_pct": 0.32
+    },
+    {
+      "ticker": "HON",
+      "nombre": "Honeywell International Inc",
+      "peso_pct": 0.31
     },
     {
       "ticker": "HON",
@@ -581,16 +667,22 @@
     {
       "ticker": "AEP",
       "nombre": "American Electric Power Co Inc",
+      "peso_pct": 0.3
+    },
+    {
+      "ticker": "PCAR",
+      "nombre": "PACCAR Inc",
+      "peso_pct": 0.3
+    },
+    {
+      "ticker": "AEP",
+      "nombre": "American Electric Power Co Inc",
       "peso_pct": 0.29
     },
     {
       "ticker": "PCAR",
       "nombre": "PACCAR Inc",
-<<<<<<< HEAD
-      "peso_pct": 0.3
-=======
       "peso_pct": 0.29
->>>>>>> test
     },
     {
       "ticker": "MPWR",
@@ -601,6 +693,11 @@
       "ticker": "BKR",
       "nombre": "Baker Hughes Co",
       "peso_pct": 0.27
+    },
+    {
+      "ticker": "PDD",
+      "nombre": "PDD Holdings Inc",
+      "peso_pct": 0.26
     },
     {
       "ticker": "FAST",
@@ -621,18 +718,15 @@
       "ticker": "TER",
       "nombre": "Teradyne Inc",
       "peso_pct": 0.25
-<<<<<<< HEAD
-=======
-    },
-    {
-      "ticker": "ADSK",
-      "nombre": "Autodesk Inc",
-      "peso_pct": 0.25
->>>>>>> test
     },
     {
       "ticker": "NXPI",
       "nombre": "NXP Semiconductors NV",
+      "peso_pct": 0.25
+    },
+    {
+      "ticker": "ADSK",
+      "nombre": "Autodesk Inc",
       "peso_pct": 0.25
     },
     {
@@ -641,19 +735,18 @@
       "peso_pct": 0.24
     },
     {
+      "ticker": "HONA",
+      "nombre": "Honeywell Aerospace Inc",
+      "peso_pct": 0.23
+    },
+    {
       "ticker": "ALAB",
       "nombre": "Astera Labs Inc",
       "peso_pct": 0.23
     },
     {
-<<<<<<< HEAD
-      "ticker": "ALAB",
-      "nombre": "Astera Labs Inc",
-      "peso_pct": 0.22
-    },
-    {
-      "ticker": "CCEP",
-      "nombre": "Coca-Cola Europacific Partners PLC",
+      "ticker": "AXON",
+      "nombre": "Axon Enterprise Inc",
       "peso_pct": 0.22
     },
     {
@@ -662,8 +755,11 @@
       "peso_pct": 0.22
     },
     {
-=======
->>>>>>> test
+      "ticker": "ALAB",
+      "nombre": "Astera Labs Inc",
+      "peso_pct": 0.22
+    },
+    {
       "ticker": "AXON",
       "nombre": "Axon Enterprise Inc",
       "peso_pct": 0.22
@@ -674,20 +770,9 @@
       "peso_pct": 0.22
     },
     {
-      "ticker": "NBIS",
-      "nombre": "Nebius Group NV",
-      "peso_pct": 0.21
-    },
-    {
-<<<<<<< HEAD
-      "ticker": "EXC",
-      "nombre": "Exelon Corp",
-      "peso_pct": 0.2
-=======
       "ticker": "CCEP",
       "nombre": "Coca-Cola Europacific Partners PLC",
-      "peso_pct": 0.21
->>>>>>> test
+      "peso_pct": 0.22
     },
     {
       "ticker": "XEL",
@@ -695,8 +780,18 @@
       "peso_pct": 0.21
     },
     {
-      "ticker": "MSTR",
-      "nombre": "Strategy Inc",
+      "ticker": "CCEP",
+      "nombre": "Coca-Cola Europacific Partners PLC",
+      "peso_pct": 0.21
+    },
+    {
+      "ticker": "NBIS",
+      "nombre": "Nebius Group NV",
+      "peso_pct": 0.21
+    },
+    {
+      "ticker": "EXC",
+      "nombre": "Exelon Corp",
       "peso_pct": 0.2
     },
     {
@@ -705,15 +800,24 @@
       "peso_pct": 0.2
     },
     {
-<<<<<<< HEAD
-      "ticker": "FER",
-      "nombre": "Ferrovial NV",
-      "peso_pct": 0.19
-=======
+      "ticker": "MSTR",
+      "nombre": "Strategy Inc",
+      "peso_pct": 0.2
+    },
+    {
       "ticker": "EXC",
       "nombre": "Exelon Corp",
       "peso_pct": 0.2
->>>>>>> test
+    },
+    {
+      "ticker": "FER",
+      "nombre": "Ferrovial NV",
+      "peso_pct": 0.19
+    },
+    {
+      "ticker": "ROP",
+      "nombre": "Roper Technologies Inc",
+      "peso_pct": 0.19
     },
     {
       "ticker": "TTWO",
@@ -721,7 +825,6 @@
       "peso_pct": 0.19
     },
     {
-<<<<<<< HEAD
       "ticker": "IDXX",
       "nombre": "IDEXX Laboratories Inc",
       "peso_pct": 0.19
@@ -730,26 +833,6 @@
       "ticker": "KDP",
       "nombre": "Keurig Dr Pepper Inc",
       "peso_pct": 0.19
-    },
-    {
-      "ticker": "MSTR",
-      "nombre": "Strategy Inc",
-      "peso_pct": 0.18
-=======
-      "ticker": "ROP",
-      "nombre": "Roper Technologies Inc",
-      "peso_pct": 0.19
-    },
-    {
-      "ticker": "IDXX",
-      "nombre": "IDEXX Laboratories Inc",
-      "peso_pct": 0.19
-    },
-    {
-      "ticker": "KDP",
-      "nombre": "Keurig Dr Pepper Inc",
-      "peso_pct": 0.19
->>>>>>> test
     },
     {
       "ticker": "MCHP",
@@ -757,10 +840,8 @@
       "peso_pct": 0.18
     },
     {
-      "ticker": "ODFL",
-      "nombre": "Old Dominion Freight Line Inc",
-<<<<<<< HEAD
-=======
+      "ticker": "MSTR",
+      "nombre": "Strategy Inc",
       "peso_pct": 0.18
     },
     {
@@ -771,12 +852,21 @@
     {
       "ticker": "TRI",
       "nombre": "Thomson Reuters Corp",
->>>>>>> test
+      "peso_pct": 0.18
+    },
+    {
+      "ticker": "MCHP",
+      "nombre": "Microchip Technology Inc",
       "peso_pct": 0.18
     },
     {
       "ticker": "ROP",
       "nombre": "Roper Technologies Inc",
+      "peso_pct": 0.18
+    },
+    {
+      "ticker": "ODFL",
+      "nombre": "Old Dominion Freight Line Inc",
       "peso_pct": 0.18
     },
     {
@@ -790,19 +880,34 @@
       "peso_pct": 0.17
     },
     {
-<<<<<<< HEAD
       "ticker": "TRI",
       "nombre": "Thomson Reuters Corp",
-=======
+      "peso_pct": 0.17
+    },
+    {
+      "ticker": "CRWV",
+      "nombre": "CoreWeave Inc",
+      "peso_pct": 0.17
+    },
+    {
       "ticker": "WDAY",
       "nombre": "Workday Inc",
->>>>>>> test
       "peso_pct": 0.17
     },
     {
       "ticker": "RKLB",
       "nombre": "Rocket Lab Corp",
       "peso_pct": 0.17
+    },
+    {
+      "ticker": "DXCM",
+      "nombre": "Dexcom Inc",
+      "peso_pct": 0.15
+    },
+    {
+      "ticker": "GEHC",
+      "nombre": "GE HealthCare Technologies Inc",
+      "peso_pct": 0.15
     },
     {
       "ticker": "DXCM",
