@@ -2,8 +2,6 @@ name: Actualización de precios QQQ
 
 on:
   schedule:
-    - cron: '0 13 * * 1-5'
-    - cron: '15 13 * * 1-5'
     - cron: '30 13 * * 1-5'
     - cron: '45 13 * * 1-5'
     - cron: '0 14 * * 1-5'
@@ -34,7 +32,6 @@ on:
     - cron: '15 20 * * 1-5'
     - cron: '30 20 * * 1-5'
     - cron: '45 20 * * 1-5'
-    - cron: '0 21 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -87,5 +84,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add qqq_data.json
           git diff --staged --quiet && echo "sin cambios" || git commit -m "precios qqq"
-          if [[ "$now_ar" < "10:00" || "$now_ar" > "18:00" ]]; then
           git push origin main
