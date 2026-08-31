@@ -1,6 +1,6 @@
 {
   "indice": "QQQ",
-  "fecha_actualizacion": "2026-08-31T21:53:56",
+  "fecha_actualizacion": "2026-08-31T21:57:31",
   "fecha_datos_mercado": "2026-08-31",
   "mercado_operado_hoy": true,
   "variacion_real_qqq": 0.0461,
@@ -839,16 +839,6 @@
       "volumen": 10491543
     },
     {
-      "ticker": "EXC",
-      "nombre": "Exelon Corp",
-      "peso_pct": 0.2,
-      "precio_actual": 43.72,
-      "precio_cierre_anterior": 43.93,
-      "variacion_pct": -0.478,
-      "impacto_indice_pct": -0.00096,
-      "volumen": 9476437
-    },
-    {
       "ticker": "PAYX",
       "nombre": "Paychex Inc",
       "peso_pct": 0.2,
@@ -1009,6 +999,16 @@
       "volumen": 1634530
     },
     {
+      "ticker": "CPRT",
+      "nombre": "Copart Inc",
+      "peso_pct": 0.13,
+      "precio_actual": 32.99,
+      "precio_cierre_anterior": 32.99,
+      "variacion_pct": 0.0,
+      "impacto_indice_pct": 0.0,
+      "volumen": 9723093
+    },
+    {
       "ticker": "KHC",
       "nombre": "Kraft Heinz Co/The",
       "peso_pct": 0.13,
@@ -1021,7 +1021,7 @@
   ],
   "errores": [
     {
-      "ticker": "CPRT",
+      "ticker": "EXC",
       "motivo": "sin datos válidos para la sesión de mercado vigente"
     }
   ]
