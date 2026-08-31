@@ -51,7 +51,7 @@ jobs:
           fi
           now_ar=$(TZ='America/Argentina/Buenos_Aires' date +'%H:%M')
           echo "Hora actual en Argentina: $now_ar"
-          if [[ "$now_ar" < "10:00" || "$now_ar" > "19:00" ]]; then
+          if [[ "$now_ar" < "10:00" || "$now_ar" > "18:00" ]]; then
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
             echo "should_run=true" >> "$GITHUB_OUTPUT"
