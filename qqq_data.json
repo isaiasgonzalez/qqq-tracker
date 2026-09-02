@@ -1,1032 +1,1032 @@
 {
   "indice": "QQQ",
-  "fecha_actualizacion": "2026-09-02T17:15:04",
+  "fecha_actualizacion": "2026-09-02T17:23:31",
   "fecha_datos_mercado": "2026-09-02",
   "mercado_operado_hoy": true,
-  "variacion_real_qqq": 0.0791,
-  "variacion_mensual_qqq": 1.1599,
-  "variacion_anual_qqq": 25.206,
+  "variacion_real_qqq": 0.0721,
+  "variacion_mensual_qqq": 1.1585,
+  "variacion_anual_qqq": 25.2042,
   "total_componentes": 102,
   "componentes": [
     {
       "ticker": "NVDA",
       "nombre": "NVIDIA Corp",
       "peso_pct": 8.4,
-      "precio_actual": 225.23,
+      "precio_actual": 224.98,
       "precio_cierre_anterior": 217.44,
-      "variacion_pct": 3.5826,
-      "impacto_indice_pct": 0.30094,
-      "volumen": 99855620
+      "variacion_pct": 3.4676,
+      "impacto_indice_pct": 0.29128,
+      "volumen": 101569997
     },
     {
       "ticker": "AAPL",
       "nombre": "Apple Inc",
       "peso_pct": 7.49,
-      "precio_actual": 325.55,
+      "precio_actual": 325.6911,
       "precio_cierre_anterior": 325.13,
-      "variacion_pct": 0.1292,
-      "impacto_indice_pct": 0.00968,
-      "volumen": 19197748
+      "variacion_pct": 0.1726,
+      "impacto_indice_pct": 0.01293,
+      "volumen": 19491269
     },
     {
       "ticker": "MSFT",
       "nombre": "Microsoft Corp",
       "peso_pct": 6.09,
-      "precio_actual": 496.6733,
+      "precio_actual": 496.11,
       "precio_cierre_anterior": 501.02,
-      "variacion_pct": -0.8676,
-      "impacto_indice_pct": -0.05284,
-      "volumen": 7583757
+      "variacion_pct": -0.98,
+      "impacto_indice_pct": -0.05968,
+      "volumen": 7751464
     },
     {
       "ticker": "MU",
       "nombre": "Micron Technology Inc",
       "peso_pct": 4.63,
-      "precio_actual": 944.855,
+      "precio_actual": 945.58,
       "precio_cierre_anterior": 933.44,
-      "variacion_pct": 1.2229,
-      "impacto_indice_pct": 0.05662,
-      "volumen": 13262122
+      "variacion_pct": 1.3006,
+      "impacto_indice_pct": 0.06022,
+      "volumen": 13379577
     },
     {
       "ticker": "AMZN",
       "nombre": "Amazon.com Inc",
       "peso_pct": 4.57,
-      "precio_actual": 254.625,
+      "precio_actual": 254.805,
       "precio_cierre_anterior": 254.92,
-      "variacion_pct": -0.1157,
-      "impacto_indice_pct": -0.00529,
-      "volumen": 12718666
+      "variacion_pct": -0.0451,
+      "impacto_indice_pct": -0.00206,
+      "volumen": 12912459
     },
     {
       "ticker": "AMD",
       "nombre": "Advanced Micro Devices Inc",
       "peso_pct": 3.34,
-      "precio_actual": 457.31,
+      "precio_actual": 456.87,
       "precio_cierre_anterior": 459.61,
-      "variacion_pct": -0.5004,
-      "impacto_indice_pct": -0.01671,
-      "volumen": 7320767
+      "variacion_pct": -0.5962,
+      "impacto_indice_pct": -0.01991,
+      "volumen": 7426124
     },
     {
       "ticker": "GOOGL",
       "nombre": "Alphabet Inc Class A",
       "peso_pct": 3.22,
-      "precio_actual": 338.315,
+      "precio_actual": 338.17,
       "precio_cierre_anterior": 335.02,
-      "variacion_pct": 0.9835,
-      "impacto_indice_pct": 0.03167,
-      "volumen": 11704176
+      "variacion_pct": 0.9402,
+      "impacto_indice_pct": 0.03027,
+      "volumen": 11865807
     },
     {
       "ticker": "GOOG",
       "nombre": "Alphabet Inc Class C",
       "peso_pct": 2.98,
-      "precio_actual": 334.7297,
+      "precio_actual": 334.55,
       "precio_cierre_anterior": 332.03,
-      "variacion_pct": 0.8131,
-      "impacto_indice_pct": 0.02423,
-      "volumen": 6841028
+      "variacion_pct": 0.759,
+      "impacto_indice_pct": 0.02262,
+      "volumen": 6940991
     },
     {
       "ticker": "AVGO",
       "nombre": "Broadcom Inc",
       "peso_pct": 2.79,
-      "precio_actual": 368.23,
+      "precio_actual": 368.45,
       "precio_cierre_anterior": 369.68,
-      "variacion_pct": -0.3922,
-      "impacto_indice_pct": -0.01094,
-      "volumen": 10470994
+      "variacion_pct": -0.3327,
+      "impacto_indice_pct": -0.00928,
+      "volumen": 10764949
     },
     {
       "ticker": "TSLA",
       "nombre": "Tesla Inc",
       "peso_pct": 2.78,
-      "precio_actual": 353.19,
+      "precio_actual": 353.0449,
       "precio_cierre_anterior": 356.09,
-      "variacion_pct": -0.8144,
-      "impacto_indice_pct": -0.02264,
-      "volumen": 21312765
+      "variacion_pct": -0.8552,
+      "impacto_indice_pct": -0.02377,
+      "volumen": 21621434
     },
     {
       "ticker": "META",
       "nombre": "Meta Platforms Inc",
       "peso_pct": 2.73,
-      "precio_actual": 592.345,
+      "precio_actual": 593.175,
       "precio_cierre_anterior": 578.54,
-      "variacion_pct": 2.3862,
-      "impacto_indice_pct": 0.06514,
-      "volumen": 9508681
+      "variacion_pct": 2.5296,
+      "impacto_indice_pct": 0.06906,
+      "volumen": 9611772
     },
     {
       "ticker": "WMT",
       "nombre": "Walmart Inc",
       "peso_pct": 2.22,
-      "precio_actual": 106.075,
+      "precio_actual": 106.06,
       "precio_cierre_anterior": 105.92,
-      "variacion_pct": 0.1463,
-      "impacto_indice_pct": 0.00325,
-      "volumen": 6998785
+      "variacion_pct": 0.1322,
+      "impacto_indice_pct": 0.00293,
+      "volumen": 7220258
     },
     {
       "ticker": "INTC",
       "nombre": "Intel Corp",
       "peso_pct": 1.98,
-      "precio_actual": 90.07,
+      "precio_actual": 90.12,
       "precio_cierre_anterior": 88.97,
-      "variacion_pct": 1.2364,
-      "impacto_indice_pct": 0.02448,
-      "volumen": 35308415
+      "variacion_pct": 1.2926,
+      "impacto_indice_pct": 0.02559,
+      "volumen": 35769365
     },
     {
       "ticker": "CSCO",
       "nombre": "Cisco Systems Inc",
       "peso_pct": 1.91,
-      "precio_actual": 108.87,
+      "precio_actual": 108.885,
       "precio_cierre_anterior": 109.74,
-      "variacion_pct": -0.7928,
-      "impacto_indice_pct": -0.01514,
-      "volumen": 4429382
+      "variacion_pct": -0.7791,
+      "impacto_indice_pct": -0.01488,
+      "volumen": 4552995
     },
     {
       "ticker": "PLTR",
       "nombre": "Palantir Technologies Inc",
       "peso_pct": 1.88,
-      "precio_actual": 168.18,
+      "precio_actual": 168.03,
       "precio_cierre_anterior": 179.92,
-      "variacion_pct": -6.5251,
-      "impacto_indice_pct": -0.12267,
-      "volumen": 26376953
+      "variacion_pct": -6.6085,
+      "impacto_indice_pct": -0.12424,
+      "volumen": 26662702
     },
     {
       "ticker": "COST",
       "nombre": "Costco Wholesale Corp",
       "peso_pct": 1.85,
-      "precio_actual": 930.085,
+      "precio_actual": 930.235,
       "precio_cierre_anterior": 939.96,
-      "variacion_pct": -1.0506,
-      "impacto_indice_pct": -0.01944,
-      "volumen": 859435
+      "variacion_pct": -1.0346,
+      "impacto_indice_pct": -0.01914,
+      "volumen": 882194
     },
     {
       "ticker": "LRCX",
       "nombre": "Lam Research Corp",
       "peso_pct": 1.66,
-      "precio_actual": 287.625,
+      "precio_actual": 287.76,
       "precio_cierre_anterior": 290.2,
-      "variacion_pct": -0.8873,
-      "impacto_indice_pct": -0.01473,
-      "volumen": 2334876
+      "variacion_pct": -0.8408,
+      "impacto_indice_pct": -0.01396,
+      "volumen": 2407542
     },
     {
       "ticker": "AMAT",
       "nombre": "Applied Materials Inc",
       "peso_pct": 1.62,
-      "precio_actual": 438.6,
+      "precio_actual": 438.65,
       "precio_cierre_anterior": 441.85,
-      "variacion_pct": -0.7355,
-      "impacto_indice_pct": -0.01192,
-      "volumen": 3054225
+      "variacion_pct": -0.7242,
+      "impacto_indice_pct": -0.01173,
+      "volumen": 3101514
     },
     {
       "ticker": "NFLX",
       "nombre": "Netflix Inc",
       "peso_pct": 1.51,
-      "precio_actual": 81.975,
+      "precio_actual": 82.15,
       "precio_cierre_anterior": 80.81,
-      "variacion_pct": 1.4417,
-      "impacto_indice_pct": 0.02177,
-      "volumen": 9923242
+      "variacion_pct": 1.6582,
+      "impacto_indice_pct": 0.02504,
+      "volumen": 10505020
     },
     {
       "ticker": "PANW",
       "nombre": "Palo Alto Networks Inc",
       "peso_pct": 1.33,
-      "precio_actual": 323.821,
+      "precio_actual": 323.5,
       "precio_cierre_anterior": 362.09,
-      "variacion_pct": -10.5689,
-      "impacto_indice_pct": -0.14057,
-      "volumen": 7591028
+      "variacion_pct": -10.6576,
+      "impacto_indice_pct": -0.14175,
+      "volumen": 7806789
     },
     {
       "ticker": "SPCX",
       "nombre": "Space Exploration Technologies Corp",
       "peso_pct": 1.19,
-      "precio_actual": 141.0,
+      "precio_actual": 140.9,
       "precio_cierre_anterior": 142.23,
-      "variacion_pct": -0.8648,
-      "impacto_indice_pct": -0.01029,
-      "volumen": 31421674
+      "variacion_pct": -0.9351,
+      "impacto_indice_pct": -0.01113,
+      "volumen": 31880423
     },
     {
       "ticker": "TXN",
       "nombre": "Texas Instruments Inc",
       "peso_pct": 1.04,
-      "precio_actual": 255.98,
+      "precio_actual": 256.02,
       "precio_cierre_anterior": 253.34,
-      "variacion_pct": 1.0421,
-      "impacto_indice_pct": 0.01084,
-      "volumen": 1229797
+      "variacion_pct": 1.0579,
+      "impacto_indice_pct": 0.011,
+      "volumen": 1263753
     },
     {
       "ticker": "AMGN",
       "nombre": "Amgen Inc",
       "peso_pct": 1.03,
-      "precio_actual": 438.58,
+      "precio_actual": 438.24,
       "precio_cierre_anterior": 438.12,
-      "variacion_pct": 0.105,
-      "impacto_indice_pct": 0.00108,
-      "volumen": 913478
+      "variacion_pct": 0.0274,
+      "impacto_indice_pct": 0.00028,
+      "volumen": 929502
     },
     {
       "ticker": "KLAC",
       "nombre": "KLA Corp",
       "peso_pct": 1.01,
-      "precio_actual": 171.64,
+      "precio_actual": 171.71,
       "precio_cierre_anterior": 170.89,
-      "variacion_pct": 0.4389,
-      "impacto_indice_pct": 0.00443,
-      "volumen": 2850387
+      "variacion_pct": 0.4798,
+      "impacto_indice_pct": 0.00485,
+      "volumen": 2924716
     },
     {
       "ticker": "LIN",
       "nombre": "Linde PLC",
       "peso_pct": 1.0,
-      "precio_actual": 488.59,
+      "precio_actual": 488.49,
       "precio_cierre_anterior": 486.76,
-      "variacion_pct": 0.376,
-      "impacto_indice_pct": 0.00376,
-      "volumen": 450834
+      "variacion_pct": 0.3554,
+      "impacto_indice_pct": 0.00355,
+      "volumen": 460588
     },
     {
       "ticker": "CRWD",
       "nombre": "Crowdstrike Holdings Inc",
       "peso_pct": 0.98,
-      "precio_actual": 202.59,
+      "precio_actual": 202.855,
       "precio_cierre_anterior": 215.07,
-      "variacion_pct": -5.8028,
-      "impacto_indice_pct": -0.05687,
-      "volumen": 6758091
+      "variacion_pct": -5.6796,
+      "impacto_indice_pct": -0.05566,
+      "volumen": 6875190
     },
     {
       "ticker": "SNDK",
       "nombre": "Sandisk Corp",
       "peso_pct": 0.97,
-      "precio_actual": 1540.8744,
+      "precio_actual": 1541.3199,
       "precio_cierre_anterior": 1536.87,
-      "variacion_pct": 0.2606,
-      "impacto_indice_pct": 0.00253,
-      "volumen": 6038761
+      "variacion_pct": 0.2895,
+      "impacto_indice_pct": 0.00281,
+      "volumen": 6093925
     },
     {
       "ticker": "TMUS",
       "nombre": "T-Mobile US Inc",
       "peso_pct": 0.87,
-      "precio_actual": 186.965,
+      "precio_actual": 187.14,
       "precio_cierre_anterior": 182.16,
-      "variacion_pct": 2.6378,
-      "impacto_indice_pct": 0.02295,
-      "volumen": 2291389
+      "variacion_pct": 2.7339,
+      "impacto_indice_pct": 0.02378,
+      "volumen": 2327420
     },
     {
       "ticker": "PEP",
       "nombre": "PepsiCo Inc",
       "peso_pct": 0.85,
-      "precio_actual": 141.16,
+      "precio_actual": 141.13,
       "precio_cierre_anterior": 139.79,
-      "variacion_pct": 0.98,
-      "impacto_indice_pct": 0.00833,
-      "volumen": 2933539
+      "variacion_pct": 0.9586,
+      "impacto_indice_pct": 0.00815,
+      "volumen": 2985569
     },
     {
       "ticker": "MRVL",
       "nombre": "Marvell Technology Inc",
       "peso_pct": 0.83,
-      "precio_actual": 205.985,
+      "precio_actual": 205.9,
       "precio_cierre_anterior": 210.39,
-      "variacion_pct": -2.0937,
-      "impacto_indice_pct": -0.01738,
-      "volumen": 9153710
+      "variacion_pct": -2.1341,
+      "impacto_indice_pct": -0.01771,
+      "volumen": 9257462
     },
     {
       "ticker": "STX",
       "nombre": "Seagate Technology Holdings PLC",
       "peso_pct": 0.82,
-      "precio_actual": 801.105,
+      "precio_actual": 802.76,
       "precio_cierre_anterior": 816.64,
-      "variacion_pct": -1.9023,
-      "impacto_indice_pct": -0.0156,
-      "volumen": 1751716
+      "variacion_pct": -1.6996,
+      "impacto_indice_pct": -0.01394,
+      "volumen": 1781735
     },
     {
       "ticker": "SHOP",
       "nombre": "Shopify Inc",
       "peso_pct": 0.82,
-      "precio_actual": 140.6,
+      "precio_actual": 140.665,
       "precio_cierre_anterior": 139.82,
-      "variacion_pct": 0.5579,
-      "impacto_indice_pct": 0.00457,
-      "volumen": 2816320
+      "variacion_pct": 0.6043,
+      "impacto_indice_pct": 0.00496,
+      "volumen": 2869359
     },
     {
       "ticker": "GILD",
       "nombre": "Gilead Sciences Inc",
       "peso_pct": 0.8,
-      "precio_actual": 149.6,
+      "precio_actual": 149.425,
       "precio_cierre_anterior": 149.92,
-      "variacion_pct": -0.2134,
-      "impacto_indice_pct": -0.00171,
-      "volumen": 1892463
+      "variacion_pct": -0.3302,
+      "impacto_indice_pct": -0.00264,
+      "volumen": 1930421
     },
     {
       "ticker": "ADI",
       "nombre": "Analog Devices Inc",
       "peso_pct": 0.78,
-      "precio_actual": 355.77,
+      "precio_actual": 355.36,
       "precio_cierre_anterior": 354.52,
-      "variacion_pct": 0.3526,
-      "impacto_indice_pct": 0.00275,
-      "volumen": 938160
+      "variacion_pct": 0.2369,
+      "impacto_indice_pct": 0.00185,
+      "volumen": 968680
     },
     {
       "ticker": "QCOM",
       "nombre": "QUALCOMM Inc",
       "peso_pct": 0.76,
-      "precio_actual": 168.98,
+      "precio_actual": 169.055,
       "precio_cierre_anterior": 166.61,
-      "variacion_pct": 1.4225,
-      "impacto_indice_pct": 0.01081,
-      "volumen": 2522216
+      "variacion_pct": 1.4675,
+      "impacto_indice_pct": 0.01115,
+      "volumen": 2565263
     },
     {
       "ticker": "BKNG",
       "nombre": "Booking Holdings Inc",
       "peso_pct": 0.7,
-      "precio_actual": 199.49,
+      "precio_actual": 199.29,
       "precio_cierre_anterior": 195.69,
-      "variacion_pct": 1.9418,
-      "impacto_indice_pct": 0.01359,
-      "volumen": 2073877
+      "variacion_pct": 1.8396,
+      "impacto_indice_pct": 0.01288,
+      "volumen": 2107874
     },
     {
       "ticker": "WDC",
       "nombre": "Western Digital Corp",
       "peso_pct": 0.7,
-      "precio_actual": 444.0,
+      "precio_actual": 444.36,
       "precio_cierre_anterior": 450.44,
-      "variacion_pct": -1.4297,
-      "impacto_indice_pct": -0.01001,
-      "volumen": 2231844
+      "variacion_pct": -1.3498,
+      "impacto_indice_pct": -0.00945,
+      "volumen": 2262363
     },
     {
       "ticker": "ASML",
       "nombre": "ASML Holding NV",
       "peso_pct": 0.68,
-      "precio_actual": 1673.85,
+      "precio_actual": 1672.91,
       "precio_cierre_anterior": 1665.14,
-      "variacion_pct": 0.5231,
-      "impacto_indice_pct": 0.00356,
-      "volumen": 467635
+      "variacion_pct": 0.4666,
+      "impacto_indice_pct": 0.00317,
+      "volumen": 474737
     },
     {
       "ticker": "VRTX",
       "nombre": "Vertex Pharmaceuticals Inc",
       "peso_pct": 0.61,
-      "precio_actual": 553.23,
+      "precio_actual": 552.985,
       "precio_cierre_anterior": 547.65,
-      "variacion_pct": 1.0189,
-      "impacto_indice_pct": 0.00622,
-      "volumen": 900185
+      "variacion_pct": 0.9742,
+      "impacto_indice_pct": 0.00594,
+      "volumen": 921133
     },
     {
       "ticker": "ISRG",
       "nombre": "Intuitive Surgical Inc",
       "peso_pct": 0.58,
-      "precio_actual": 374.95,
+      "precio_actual": 373.1827,
       "precio_cierre_anterior": 369.25,
-      "variacion_pct": 1.5437,
-      "impacto_indice_pct": 0.00895,
-      "volumen": 835926
+      "variacion_pct": 1.0651,
+      "impacto_indice_pct": 0.00618,
+      "volumen": 884984
     },
     {
       "ticker": "FTNT",
       "nombre": "Fortinet Inc",
       "peso_pct": 0.54,
-      "precio_actual": 152.72,
+      "precio_actual": 153.07,
       "precio_cierre_anterior": 161.85,
-      "variacion_pct": -5.641,
-      "impacto_indice_pct": -0.03046,
-      "volumen": 1750852
+      "variacion_pct": -5.4248,
+      "impacto_indice_pct": -0.02929,
+      "volumen": 1815320
     },
     {
       "ticker": "SBUX",
       "nombre": "Starbucks Corp",
       "peso_pct": 0.54,
-      "precio_actual": 107.38,
+      "precio_actual": 107.32,
       "precio_cierre_anterior": 106.15,
-      "variacion_pct": 1.1587,
-      "impacto_indice_pct": 0.00626,
-      "volumen": 1632410
+      "variacion_pct": 1.1022,
+      "impacto_indice_pct": 0.00595,
+      "volumen": 1661978
     },
     {
       "ticker": "ADBE",
       "nombre": "Adobe Inc",
       "peso_pct": 0.52,
-      "precio_actual": 281.95,
+      "precio_actual": 281.61,
       "precio_cierre_anterior": 286.08,
-      "variacion_pct": -1.4436,
-      "impacto_indice_pct": -0.00751,
-      "volumen": 1992560
+      "variacion_pct": -1.5625,
+      "impacto_indice_pct": -0.00813,
+      "volumen": 2068342
     },
     {
       "ticker": "ADP",
       "nombre": "Automatic Data Processing Inc",
       "peso_pct": 0.51,
-      "precio_actual": 280.9,
+      "precio_actual": 280.94,
       "precio_cierre_anterior": 283.49,
-      "variacion_pct": -0.9136,
-      "impacto_indice_pct": -0.00466,
-      "volumen": 642353
+      "variacion_pct": -0.8995,
+      "impacto_indice_pct": -0.00459,
+      "volumen": 660743
     },
     {
       "ticker": "ARM",
       "nombre": "ARM Holdings PLC",
       "peso_pct": 0.45,
-      "precio_actual": 232.51,
+      "precio_actual": 233.075,
       "precio_cierre_anterior": 234.82,
-      "variacion_pct": -0.9837,
-      "impacto_indice_pct": -0.00443,
-      "volumen": 1431567
+      "variacion_pct": -0.7431,
+      "impacto_indice_pct": -0.00334,
+      "volumen": 1459995
     },
     {
       "ticker": "MELI",
       "nombre": "MercadoLibre Inc",
       "peso_pct": 0.44,
-      "precio_actual": 1988.99,
+      "precio_actual": 1992.895,
       "precio_cierre_anterior": 1963.49,
-      "variacion_pct": 1.2987,
-      "impacto_indice_pct": 0.00571,
-      "volumen": 163753
+      "variacion_pct": 1.4976,
+      "impacto_indice_pct": 0.00659,
+      "volumen": 168688
     },
     {
       "ticker": "CEG",
       "nombre": "Constellation Energy Corp",
       "peso_pct": 0.44,
-      "precio_actual": 283.59,
+      "precio_actual": 282.765,
       "precio_cierre_anterior": 280.31,
-      "variacion_pct": 1.1701,
-      "impacto_indice_pct": 0.00515,
-      "volumen": 1046320
+      "variacion_pct": 0.8758,
+      "impacto_indice_pct": 0.00385,
+      "volumen": 1077211
     },
     {
       "ticker": "APP",
       "nombre": "AppLovin Corp",
       "peso_pct": 0.43,
-      "precio_actual": 318.95,
+      "precio_actual": 318.88,
       "precio_cierre_anterior": 311.74,
-      "variacion_pct": 2.3128,
-      "impacto_indice_pct": 0.00995,
-      "volumen": 1791565
+      "variacion_pct": 2.2904,
+      "impacto_indice_pct": 0.00985,
+      "volumen": 1838410
     },
     {
       "ticker": "DASH",
       "nombre": "DoorDash Inc",
       "peso_pct": 0.43,
-      "precio_actual": 226.11,
+      "precio_actual": 226.31,
       "precio_cierre_anterior": 225.66,
-      "variacion_pct": 0.1994,
-      "impacto_indice_pct": 0.00086,
-      "volumen": 1410157
+      "variacion_pct": 0.288,
+      "impacto_indice_pct": 0.00124,
+      "volumen": 1448487
     },
     {
       "ticker": "INTU",
       "nombre": "Intuit Inc",
       "peso_pct": 0.43,
-      "precio_actual": 342.44,
+      "precio_actual": 342.79,
       "precio_cierre_anterior": 344.93,
-      "variacion_pct": -0.7219,
-      "impacto_indice_pct": -0.0031,
-      "volumen": 1389076
+      "variacion_pct": -0.6204,
+      "impacto_indice_pct": -0.00267,
+      "volumen": 1410694
     },
     {
       "ticker": "CMCSA",
       "nombre": "Comcast Corp",
       "peso_pct": 0.42,
-      "precio_actual": 27.115,
+      "precio_actual": 27.125,
       "precio_cierre_anterior": 26.3,
-      "variacion_pct": 3.0989,
-      "impacto_indice_pct": 0.01302,
-      "volumen": 7322129
+      "variacion_pct": 3.1369,
+      "impacto_indice_pct": 0.01317,
+      "volumen": 7573341
     },
     {
       "ticker": "CSX",
       "nombre": "CSX Corp",
       "peso_pct": 0.42,
-      "precio_actual": 48.51,
+      "precio_actual": 48.555,
       "precio_cierre_anterior": 48.7,
-      "variacion_pct": -0.3901,
-      "impacto_indice_pct": -0.00164,
-      "volumen": 4619074
+      "variacion_pct": -0.2977,
+      "impacto_indice_pct": -0.00125,
+      "volumen": 4701831
     },
     {
       "ticker": "MAR",
       "nombre": "Marriott International Inc/MD",
       "peso_pct": 0.41,
-      "precio_actual": 334.955,
+      "precio_actual": 334.725,
       "precio_cierre_anterior": 334.55,
-      "variacion_pct": 0.1211,
-      "impacto_indice_pct": 0.0005,
-      "volumen": 395419
+      "variacion_pct": 0.0523,
+      "impacto_indice_pct": 0.00021,
+      "volumen": 403932
     },
     {
       "ticker": "CDNS",
       "nombre": "Cadence Design Systems Inc",
       "peso_pct": 0.41,
-      "precio_actual": 304.345,
+      "precio_actual": 304.35,
       "precio_cierre_anterior": 313.04,
-      "variacion_pct": -2.7776,
-      "impacto_indice_pct": -0.01139,
-      "volumen": 962839
+      "variacion_pct": -2.776,
+      "impacto_indice_pct": -0.01138,
+      "volumen": 1004140
     },
     {
       "ticker": "MNST",
       "nombre": "Monster Beverage Corp",
       "peso_pct": 0.4,
-      "precio_actual": 44.28,
+      "precio_actual": 44.245,
       "precio_cierre_anterior": 44.99,
-      "variacion_pct": -1.5781,
-      "impacto_indice_pct": -0.00631,
-      "volumen": 3546225
+      "variacion_pct": -1.6559,
+      "impacto_indice_pct": -0.00662,
+      "volumen": 3677487
     },
     {
       "ticker": "SNPS",
       "nombre": "Synopsys Inc",
       "peso_pct": 0.37,
-      "precio_actual": 411.32,
+      "precio_actual": 413.38,
       "precio_cierre_anterior": 414.82,
-      "variacion_pct": -0.8437,
-      "impacto_indice_pct": -0.00312,
-      "volumen": 457646
+      "variacion_pct": -0.3471,
+      "impacto_indice_pct": -0.00128,
+      "volumen": 479547
     },
     {
       "ticker": "CTAS",
       "nombre": "Cintas Corp",
       "peso_pct": 0.36,
-      "precio_actual": 197.975,
+      "precio_actual": 197.89,
       "precio_cierre_anterior": 200.59,
-      "variacion_pct": -1.3036,
-      "impacto_indice_pct": -0.00469,
-      "volumen": 827633
+      "variacion_pct": -1.346,
+      "impacto_indice_pct": -0.00485,
+      "volumen": 887764
     },
     {
       "ticker": "REGN",
       "nombre": "Regeneron Pharmaceuticals Inc",
       "peso_pct": 0.36,
-      "precio_actual": 848.165,
+      "precio_actual": 846.71,
       "precio_cierre_anterior": 823.82,
-      "variacion_pct": 2.9551,
-      "impacto_indice_pct": 0.01064,
-      "volumen": 276588
+      "variacion_pct": 2.7785,
+      "impacto_indice_pct": 0.01,
+      "volumen": 299605
     },
     {
       "ticker": "DDOG",
       "nombre": "Datadog Inc",
       "peso_pct": 0.35,
-      "precio_actual": 210.95,
+      "precio_actual": 211.21,
       "precio_cierre_anterior": 223.84,
-      "variacion_pct": -5.7586,
-      "impacto_indice_pct": -0.02016,
-      "volumen": 2983270
+      "variacion_pct": -5.6424,
+      "impacto_indice_pct": -0.01975,
+      "volumen": 3074613
     },
     {
       "ticker": "ABNB",
       "nombre": "Airbnb Inc",
       "peso_pct": 0.35,
-      "precio_actual": 183.095,
+      "precio_actual": 182.82,
       "precio_cierre_anterior": 182.545,
-      "variacion_pct": 0.3013,
-      "impacto_indice_pct": 0.00105,
-      "volumen": 1309106
+      "variacion_pct": 0.1507,
+      "impacto_indice_pct": 0.00053,
+      "volumen": 1348473
     },
     {
       "ticker": "MDLZ",
       "nombre": "Mondelez International Inc",
       "peso_pct": 0.35,
-      "precio_actual": 62.5444,
+      "precio_actual": 62.615,
       "precio_cierre_anterior": 61.61,
-      "variacion_pct": 1.5166,
-      "impacto_indice_pct": 0.00531,
-      "volumen": 2290457
+      "variacion_pct": 1.6312,
+      "impacto_indice_pct": 0.00571,
+      "volumen": 2328071
     },
     {
       "ticker": "ROST",
       "nombre": "Ross Stores Inc",
       "peso_pct": 0.32,
-      "precio_actual": 232.67,
+      "precio_actual": 232.48,
       "precio_cierre_anterior": 229.24,
-      "variacion_pct": 1.4962,
-      "impacto_indice_pct": 0.00479,
-      "volumen": 639179
+      "variacion_pct": 1.4134,
+      "impacto_indice_pct": 0.00452,
+      "volumen": 659604
     },
     {
       "ticker": "WBD",
       "nombre": "Warner Bros Discovery Inc",
       "peso_pct": 0.32,
-      "precio_actual": 28.4,
+      "precio_actual": 28.395,
       "precio_cierre_anterior": 28.32,
-      "variacion_pct": 0.2825,
-      "impacto_indice_pct": 0.0009,
-      "volumen": 4325514
+      "variacion_pct": 0.2648,
+      "impacto_indice_pct": 0.00085,
+      "volumen": 4425726
     },
     {
       "ticker": "ORLY",
       "nombre": "O'Reilly Automotive Inc",
       "peso_pct": 0.32,
-      "precio_actual": 86.87,
+      "precio_actual": 86.76,
       "precio_cierre_anterior": 87.95,
-      "variacion_pct": -1.228,
-      "impacto_indice_pct": -0.00393,
-      "volumen": 2353640
+      "variacion_pct": -1.353,
+      "impacto_indice_pct": -0.00433,
+      "volumen": 2408697
     },
     {
       "ticker": "LITE",
       "nombre": "Lumentum Holdings Inc",
       "peso_pct": 0.31,
-      "precio_actual": 858.08,
+      "precio_actual": 858.98,
       "precio_cierre_anterior": 868.95,
-      "variacion_pct": -1.2509,
-      "impacto_indice_pct": -0.00388,
-      "volumen": 1713979
+      "variacion_pct": -1.1474,
+      "impacto_indice_pct": -0.00356,
+      "volumen": 1730654
     },
     {
       "ticker": "HON",
       "nombre": "Honeywell International Inc",
       "peso_pct": 0.3,
-      "precio_actual": 206.86,
+      "precio_actual": 206.6,
       "precio_cierre_anterior": 209.98,
-      "variacion_pct": -1.4859,
-      "impacto_indice_pct": -0.00446,
-      "volumen": 1068661
+      "variacion_pct": -1.6097,
+      "impacto_indice_pct": -0.00483,
+      "volumen": 1100218
     },
     {
       "ticker": "AEP",
       "nombre": "American Electric Power Co Inc",
       "peso_pct": 0.3,
-      "precio_actual": 123.345,
+      "precio_actual": 123.38,
       "precio_cierre_anterior": 122.96,
-      "variacion_pct": 0.3131,
-      "impacto_indice_pct": 0.00094,
-      "volumen": 966394
+      "variacion_pct": 0.3416,
+      "impacto_indice_pct": 0.00102,
+      "volumen": 984951
     },
     {
       "ticker": "PCAR",
       "nombre": "PACCAR Inc",
       "peso_pct": 0.29,
-      "precio_actual": 122.62,
+      "precio_actual": 122.515,
       "precio_cierre_anterior": 122.45,
-      "variacion_pct": 0.1388,
-      "impacto_indice_pct": 0.0004,
-      "volumen": 890645
+      "variacion_pct": 0.0531,
+      "impacto_indice_pct": 0.00015,
+      "volumen": 911499
     },
     {
       "ticker": "MPWR",
       "nombre": "Monolithic Power Systems Inc",
       "peso_pct": 0.27,
-      "precio_actual": 1230.5,
+      "precio_actual": 1229.99,
       "precio_cierre_anterior": 1225.96,
-      "variacion_pct": 0.3703,
-      "impacto_indice_pct": 0.001,
-      "volumen": 166365
+      "variacion_pct": 0.3287,
+      "impacto_indice_pct": 0.00089,
+      "volumen": 170279
     },
     {
       "ticker": "BKR",
       "nombre": "Baker Hughes Co",
       "peso_pct": 0.27,
-      "precio_actual": 64.42,
+      "precio_actual": 64.24,
       "precio_cierre_anterior": 63.66,
-      "variacion_pct": 1.1938,
-      "impacto_indice_pct": 0.00322,
-      "volumen": 1996213
+      "variacion_pct": 0.9111,
+      "impacto_indice_pct": 0.00246,
+      "volumen": 2097625
     },
     {
       "ticker": "PDD",
       "nombre": "PDD Holdings Inc",
       "peso_pct": 0.25,
-      "precio_actual": 82.56,
+      "precio_actual": 82.55,
       "precio_cierre_anterior": 83.17,
-      "variacion_pct": -0.7334,
-      "impacto_indice_pct": -0.00183,
-      "volumen": 2059557
+      "variacion_pct": -0.7455,
+      "impacto_indice_pct": -0.00186,
+      "volumen": 2099947
     },
     {
       "ticker": "FAST",
       "nombre": "Fastenal Co",
       "peso_pct": 0.25,
-      "precio_actual": 47.825,
+      "precio_actual": 47.875,
       "precio_cierre_anterior": 48.75,
-      "variacion_pct": -1.8974,
-      "impacto_indice_pct": -0.00474,
-      "volumen": 2464237
+      "variacion_pct": -1.7949,
+      "impacto_indice_pct": -0.00449,
+      "volumen": 2530212
     },
     {
       "ticker": "NXPI",
       "nombre": "NXP Semiconductors NV",
       "peso_pct": 0.25,
-      "precio_actual": 228.0838,
+      "precio_actual": 228.09,
       "precio_cierre_anterior": 222.4,
-      "variacion_pct": 2.5557,
-      "impacto_indice_pct": 0.00639,
-      "volumen": 1093830
+      "variacion_pct": 2.5585,
+      "impacto_indice_pct": 0.0064,
+      "volumen": 1120304
     },
     {
       "ticker": "FANG",
       "nombre": "Diamondback Energy Inc",
       "peso_pct": 0.24,
-      "precio_actual": 203.91,
+      "precio_actual": 203.93,
       "precio_cierre_anterior": 203.16,
-      "variacion_pct": 0.3692,
-      "impacto_indice_pct": 0.00089,
-      "volumen": 548598
+      "variacion_pct": 0.379,
+      "impacto_indice_pct": 0.00091,
+      "volumen": 557347
     },
     {
       "ticker": "ADSK",
       "nombre": "Autodesk Inc",
       "peso_pct": 0.24,
-      "precio_actual": 242.69,
+      "precio_actual": 242.78,
       "precio_cierre_anterior": 247.69,
-      "variacion_pct": -2.0187,
-      "impacto_indice_pct": -0.00484,
-      "volumen": 557993
+      "variacion_pct": -1.9823,
+      "impacto_indice_pct": -0.00476,
+      "volumen": 566351
     },
     {
       "ticker": "TER",
       "nombre": "Teradyne Inc",
       "peso_pct": 0.24,
-      "precio_actual": 344.26,
+      "precio_actual": 344.35,
       "precio_cierre_anterior": 335.46,
-      "variacion_pct": 2.6233,
-      "impacto_indice_pct": 0.0063,
-      "volumen": 866833
+      "variacion_pct": 2.6501,
+      "impacto_indice_pct": 0.00636,
+      "volumen": 887217
     },
     {
       "ticker": "HONA",
       "nombre": "Honeywell Aerospace Inc",
       "peso_pct": 0.23,
-      "precio_actual": 153.67,
+      "precio_actual": 153.65,
       "precio_cierre_anterior": 154.24,
-      "variacion_pct": -0.3696,
-      "impacto_indice_pct": -0.00085,
-      "volumen": 1118164
+      "variacion_pct": -0.3825,
+      "impacto_indice_pct": -0.00088,
+      "volumen": 1139315
     },
     {
       "ticker": "ALAB",
       "nombre": "Astera Labs Inc",
       "peso_pct": 0.22,
-      "precio_actual": 270.71,
+      "precio_actual": 270.83,
       "precio_cierre_anterior": 279.91,
-      "variacion_pct": -3.2868,
-      "impacto_indice_pct": -0.00723,
-      "volumen": 1407920
+      "variacion_pct": -3.2439,
+      "impacto_indice_pct": -0.00714,
+      "volumen": 1422996
     },
     {
       "ticker": "XEL",
       "nombre": "Xcel Energy Inc",
       "peso_pct": 0.21,
-      "precio_actual": 75.49,
+      "precio_actual": 75.545,
       "precio_cierre_anterior": 75.89,
-      "variacion_pct": -0.5271,
-      "impacto_indice_pct": -0.00111,
-      "volumen": 1928648
+      "variacion_pct": -0.4546,
+      "impacto_indice_pct": -0.00095,
+      "volumen": 1967630
     },
     {
       "ticker": "PYPL",
       "nombre": "PayPal Holdings Inc",
       "peso_pct": 0.21,
-      "precio_actual": 54.24,
+      "precio_actual": 54.23,
       "precio_cierre_anterior": 52.4,
-      "variacion_pct": 3.5115,
-      "impacto_indice_pct": 0.00737,
-      "volumen": 5556607
+      "variacion_pct": 3.4924,
+      "impacto_indice_pct": 0.00733,
+      "volumen": 5635683
     },
     {
       "ticker": "AXON",
       "nombre": "Axon Enterprise Inc",
       "peso_pct": 0.21,
-      "precio_actual": 503.89,
+      "precio_actual": 503.76,
       "precio_cierre_anterior": 518.3,
-      "variacion_pct": -2.7802,
-      "impacto_indice_pct": -0.00584,
-      "volumen": 457337
+      "variacion_pct": -2.8053,
+      "impacto_indice_pct": -0.00589,
+      "volumen": 468781
     },
     {
       "ticker": "CCEP",
       "nombre": "Coca-Cola Europacific Partners PLC",
       "peso_pct": 0.21,
-      "precio_actual": 108.08,
+      "precio_actual": 107.94,
       "precio_cierre_anterior": 107.6,
-      "variacion_pct": 0.4461,
-      "impacto_indice_pct": 0.00094,
-      "volumen": 486700
+      "variacion_pct": 0.316,
+      "impacto_indice_pct": 0.00066,
+      "volumen": 499278
     },
     {
       "ticker": "NBIS",
       "nombre": "Nebius Group NV",
       "peso_pct": 0.2,
-      "precio_actual": 199.82,
+      "precio_actual": 199.905,
       "precio_cierre_anterior": 199.54,
-      "variacion_pct": 0.1403,
-      "impacto_indice_pct": 0.00028,
-      "volumen": 5240901
+      "variacion_pct": 0.1829,
+      "impacto_indice_pct": 0.00037,
+      "volumen": 5305259
     },
     {
       "ticker": "EXC",
       "nombre": "Exelon Corp",
       "peso_pct": 0.2,
-      "precio_actual": 43.905,
+      "precio_actual": 43.895,
       "precio_cierre_anterior": 43.83,
-      "variacion_pct": 0.1711,
-      "impacto_indice_pct": 0.00034,
-      "volumen": 4569794
+      "variacion_pct": 0.1483,
+      "impacto_indice_pct": 0.0003,
+      "volumen": 4611769
     },
     {
       "ticker": "PAYX",
       "nombre": "Paychex Inc",
       "peso_pct": 0.2,
-      "precio_actual": 123.83,
+      "precio_actual": 123.935,
       "precio_cierre_anterior": 125.64,
-      "variacion_pct": -1.4406,
-      "impacto_indice_pct": -0.00288,
-      "volumen": 1007211
+      "variacion_pct": -1.3571,
+      "impacto_indice_pct": -0.00271,
+      "volumen": 1022364
     },
     {
       "ticker": "MSTR",
       "nombre": "Strategy Inc",
       "peso_pct": 0.19,
-      "precio_actual": 122.28,
+      "precio_actual": 122.11,
       "precio_cierre_anterior": 124.88,
-      "variacion_pct": -2.082,
-      "impacto_indice_pct": -0.00396,
-      "volumen": 9445270
+      "variacion_pct": -2.2181,
+      "impacto_indice_pct": -0.00421,
+      "volumen": 9575634
     },
     {
       "ticker": "TTWO",
       "nombre": "Take-Two Interactive Software Inc",
       "peso_pct": 0.19,
-      "precio_actual": 217.95,
+      "precio_actual": 217.45,
       "precio_cierre_anterior": 216.68,
-      "variacion_pct": 0.5861,
-      "impacto_indice_pct": 0.00111,
-      "volumen": 1084031
+      "variacion_pct": 0.3554,
+      "impacto_indice_pct": 0.00068,
+      "volumen": 1113965
     },
     {
       "ticker": "IDXX",
       "nombre": "IDEXX Laboratories Inc",
       "peso_pct": 0.19,
-      "precio_actual": 543.45,
+      "precio_actual": 542.87,
       "precio_cierre_anterior": 545.16,
-      "variacion_pct": -0.3137,
-      "impacto_indice_pct": -0.0006,
-      "volumen": 204990
+      "variacion_pct": -0.4201,
+      "impacto_indice_pct": -0.0008,
+      "volumen": 207922
     },
     {
       "ticker": "FER",
       "nombre": "Ferrovial NV",
       "peso_pct": 0.19,
-      "precio_actual": 57.7,
+      "precio_actual": 57.67,
       "precio_cierre_anterior": 57.7,
-      "variacion_pct": 0.0,
-      "impacto_indice_pct": 0.0,
-      "volumen": 337733
+      "variacion_pct": -0.052,
+      "impacto_indice_pct": -0.0001,
+      "volumen": 341658
     },
     {
       "ticker": "KDP",
       "nombre": "Keurig Dr Pepper Inc",
       "peso_pct": 0.19,
-      "precio_actual": 32.825,
+      "precio_actual": 32.84,
       "precio_cierre_anterior": 31.89,
-      "variacion_pct": 2.932,
-      "impacto_indice_pct": 0.00557,
-      "volumen": 2774373
+      "variacion_pct": 2.979,
+      "impacto_indice_pct": 0.00566,
+      "volumen": 2871599
     },
     {
       "ticker": "ROP",
       "nombre": "Roper Technologies Inc",
       "peso_pct": 0.19,
-      "precio_actual": 416.92,
+      "precio_actual": 416.895,
       "precio_cierre_anterior": 418.31,
-      "variacion_pct": -0.3323,
-      "impacto_indice_pct": -0.00063,
-      "volumen": 194740
+      "variacion_pct": -0.3383,
+      "impacto_indice_pct": -0.00064,
+      "volumen": 199025
     },
     {
       "ticker": "WDAY",
       "nombre": "Workday Inc",
       "peso_pct": 0.18,
-      "precio_actual": 199.0,
+      "precio_actual": 198.825,
       "precio_cierre_anterior": 198.38,
-      "variacion_pct": 0.3125,
-      "impacto_indice_pct": 0.00056,
-      "volumen": 1303938
+      "variacion_pct": 0.2243,
+      "impacto_indice_pct": 0.0004,
+      "volumen": 1333363
     },
     {
       "ticker": "MCHP",
       "nombre": "Microchip Technology Inc",
       "peso_pct": 0.18,
-      "precio_actual": 72.4,
+      "precio_actual": 72.45,
       "precio_cierre_anterior": 71.41,
-      "variacion_pct": 1.3864,
-      "impacto_indice_pct": 0.0025,
-      "volumen": 1946684
+      "variacion_pct": 1.4564,
+      "impacto_indice_pct": 0.00262,
+      "volumen": 2006480
     },
     {
       "ticker": "TRI",
       "nombre": "Thomson Reuters Corp",
       "peso_pct": 0.18,
-      "precio_actual": 105.331,
+      "precio_actual": 105.14,
       "precio_cierre_anterior": 106.35,
-      "variacion_pct": -0.9582,
-      "impacto_indice_pct": -0.00172,
-      "volumen": 763721
+      "variacion_pct": -1.1378,
+      "impacto_indice_pct": -0.00205,
+      "volumen": 779222
     },
     {
       "ticker": "ODFL",
       "nombre": "Old Dominion Freight Line Inc",
       "peso_pct": 0.18,
-      "precio_actual": 187.24,
+      "precio_actual": 187.17,
       "precio_cierre_anterior": 187.01,
-      "variacion_pct": 0.123,
-      "impacto_indice_pct": 0.00022,
-      "volumen": 782443
+      "variacion_pct": 0.0856,
+      "impacto_indice_pct": 0.00015,
+      "volumen": 798917
     },
     {
       "ticker": "CRWV",
       "nombre": "CoreWeave Inc",
       "peso_pct": 0.17,
-      "precio_actual": 79.855,
+      "precio_actual": 79.9,
       "precio_cierre_anterior": 81.85,
-      "variacion_pct": -2.4374,
-      "impacto_indice_pct": -0.00414,
-      "volumen": 8950506
+      "variacion_pct": -2.3824,
+      "impacto_indice_pct": -0.00405,
+      "volumen": 9147287
     },
     {
       "ticker": "RKLB",
       "nombre": "Rocket Lab Corp",
       "peso_pct": 0.16,
-      "precio_actual": 62.13,
+      "precio_actual": 61.895,
       "precio_cierre_anterior": 62.54,
-      "variacion_pct": -0.6556,
-      "impacto_indice_pct": -0.00105,
-      "volumen": 10635469
+      "variacion_pct": -1.0313,
+      "impacto_indice_pct": -0.00165,
+      "volumen": 10860765
     },
     {
       "ticker": "DXCM",
       "nombre": "Dexcom Inc",
       "peso_pct": 0.15,
-      "precio_actual": 90.3,
+      "precio_actual": 90.27,
       "precio_cierre_anterior": 90.14,
-      "variacion_pct": 0.1775,
-      "impacto_indice_pct": 0.00027,
-      "volumen": 753808
+      "variacion_pct": 0.1442,
+      "impacto_indice_pct": 0.00022,
+      "volumen": 764852
     },
     {
       "ticker": "GEHC",
       "nombre": "GE HealthCare Technologies Inc",
       "peso_pct": 0.14,
-      "precio_actual": 71.24,
+      "precio_actual": 71.17,
       "precio_cierre_anterior": 70.42,
-      "variacion_pct": 1.1644,
-      "impacto_indice_pct": 0.00163,
-      "volumen": 843838
+      "variacion_pct": 1.065,
+      "impacto_indice_pct": 0.00149,
+      "volumen": 872000
     },
     {
       "ticker": "ALNY",
       "nombre": "Alnylam Pharmaceuticals Inc",
       "peso_pct": 0.14,
-      "precio_actual": 266.6725,
+      "precio_actual": 266.23,
       "precio_cierre_anterior": 246.11,
-      "variacion_pct": 8.355,
-      "impacto_indice_pct": 0.0117,
-      "volumen": 1842811
+      "variacion_pct": 8.1752,
+      "impacto_indice_pct": 0.01145,
+      "volumen": 1862276
     },
     {
       "ticker": "CPRT",
       "nombre": "Copart Inc",
       "peso_pct": 0.13,
-      "precio_actual": 32.24,
+      "precio_actual": 32.19,
       "precio_cierre_anterior": 32.47,
-      "variacion_pct": -0.7083,
-      "impacto_indice_pct": -0.00092,
-      "volumen": 1644964
+      "variacion_pct": -0.8623,
+      "impacto_indice_pct": -0.00112,
+      "volumen": 1682955
     },
     {
       "ticker": "KHC",
       "nombre": "Kraft Heinz Co/The",
       "peso_pct": 0.13,
-      "precio_actual": 26.395,
+      "precio_actual": 26.3914,
       "precio_cierre_anterior": 25.87,
-      "variacion_pct": 2.0294,
-      "impacto_indice_pct": 0.00264,
-      "volumen": 6755071
+      "variacion_pct": 2.0155,
+      "impacto_indice_pct": 0.00262,
+      "volumen": 6894304
     }
   ],
   "errores": []
