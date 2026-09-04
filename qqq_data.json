@@ -1,12 +1,12 @@
 {
   "indice": "QQQ",
-  "fecha_actualizacion": "2026-09-04T20:44:10",
+  "fecha_actualizacion": "2026-09-04T20:55:08",
   "fecha_datos_mercado": "2026-09-04",
   "mercado_operado_hoy": true,
   "variacion_real_qqq": 0.1798,
   "variacion_mensual_qqq": 0.2314,
   "variacion_anual_qqq": 24.9865,
-  "total_componentes": 101,
+  "total_componentes": 102,
   "componentes": [
     {
       "ticker": "NVDA",
@@ -699,6 +699,16 @@
       "volumen": 625324
     },
     {
+      "ticker": "BKR",
+      "nombre": "Baker Hughes Co",
+      "peso_pct": 0.27,
+      "precio_actual": 63.5,
+      "precio_cierre_anterior": 63.64,
+      "variacion_pct": -0.22,
+      "impacto_indice_pct": -0.00059,
+      "volumen": 5704991
+    },
+    {
       "ticker": "PDD",
       "nombre": "PDD Holdings Inc",
       "peso_pct": 0.25,
@@ -1019,10 +1029,5 @@
       "volumen": 20130719
     }
   ],
-  "errores": [
-    {
-      "ticker": "BKR",
-      "motivo": "sin datos válidos para la sesión de mercado vigente"
-    }
-  ]
+  "errores": []
 }
