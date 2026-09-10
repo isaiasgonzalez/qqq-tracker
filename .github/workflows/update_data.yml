@@ -2,83 +2,34 @@ name: Actualización de precios QQQ
 
 on:
   schedule:
-    - cron: '30 13 * * 1-5'
-    - cron: '45 13 * * 1-5'
-    - cron: '0 14 * * 1-5'
-    - cron: '15 14 * * 1-5'
-    - cron: '30 14 * * 1-5'
-    - cron: '45 14 * * 1-5'
-    - cron: '0 15 * * 1-5'
-    - cron: '15 15 * * 1-5'
-    - cron: '30 15 * * 1-5'
-    - cron: '45 15 * * 1-5'
-    - cron: '0 16 * * 1-5'
-    - cron: '15 16 * * 1-5'
-    - cron: '30 16 * * 1-5'
-    - cron: '45 16 * * 1-5'
-    - cron: '0 17 * * 1-5'
-    - cron: '15 17 * * 1-5'
-    - cron: '30 17 * * 1-5'
-    - cron: '45 17 * * 1-5'
-    - cron: '0 18 * * 1-5'
-    - cron: '15 18 * * 1-5'
-    - cron: '30 18 * * 1-5'
-    - cron: '45 18 * * 1-5'
-    - cron: '0 19 * * 1-5'
-    - cron: '15 19 * * 1-5'
-    - cron: '30 19 * * 1-5'
-    - cron: '45 19 * * 1-5'
-    - cron: '0 20 * * 1-5'
-    - cron: '15 20 * * 1-5'
-    - cron: '30 20 * * 1-5'
-    - cron: '45 20 * * 1-5'
+    - cron: '*/15 13-20 * * 1-5'
   workflow_dispatch:
 
 permissions:
-  contents: write   # necesario para que el bot pueda commitear y pushear a main
+  contents: write 
 
 jobs:
   update-prices:
     name: Actualizar precios
     runs-on: ubuntu-latest
     steps:
-      - name: Verificar hora real en Argentina
-        id: gate
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          now_ar=$(TZ='America/Argentina/Buenos_Aires' date +'%H:%M')
-          echo "Hora actual en Argentina: $now_ar"
-          if [[ "$now_ar" < "10:00" || "$now_ar" > "18:00" ]]; then
-            echo "should_run=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Checkout del repositorio
-        if: steps.gate.outputs.should_run == 'true'
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           ref: main
 
       - name: Configurar entorno Python
-        if: steps.gate.outputs.should_run == 'true'
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.11'
 
       - name: Instalar dependencias
-        if: steps.gate.outputs.should_run == 'true'
         run: pip install yfinance pandas
 
       - name: Ejecutar actualización de precios
-        if: steps.gate.outputs.should_run == 'true'
         run: python script.py precios
 
       - name: Commit y push de qqq_data.json
-        if: steps.gate.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
